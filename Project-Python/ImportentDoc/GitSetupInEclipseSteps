@@ -1,0 +1,17 @@
+Visual stdio:
+https://www.youtube.com/watch?v=GIRmPB0xshw
+
+1. Install eclipse for EE web development
+2. Install pydev
+	go to help-> Install new software-> enter http://pydev.org/updates
+	
+1. Open eclipse
+2. go to Window->Prefrences->Team->Git->Configration
+
+----------------------------------------------------------------------------------------------------------
+https://www.youtube.com/watch?v=LPT7v69guVY&t=3s
+1. Create a github repository and sign in
+2. open git repository in eclipse and clone the repository https://github.com/kapjain/BPython.git
+3. Create a project in eclipse or open existing project
+4. Team-> share project and share the project and to git repository
+5. commit and push your project to repository

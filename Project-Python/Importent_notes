@@ -1,0 +1,17 @@
+Python 2
+11/2
+5
+
+11//2
+5
+from __future__ import division
+11/2# to get the exact division we need to import division from __future__
+5.5
+
+
+Python 3
+11/2
+5.5
+
+11//2
+5

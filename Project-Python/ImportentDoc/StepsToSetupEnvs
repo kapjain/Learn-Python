@@ -1,0 +1,100 @@
+1. Install python in windows 
+	Windows don't include Python by default, but you can easily install it (along with the pip3 tool) from python.org:
+    Download the required installer:
+        Go to https://www.python.org/downloads/ or https://www.python.org/downloads/windows/
+        Select the Download Python 3.7.1 button (the exact minor version number may differ).
+    Install Python by double-clicking on the downloaded file and following the installation prompts
+    Be sure to check the box labeled "Add Python to PATH" or else go to advanced settings and set path in user variable
+	C:\Users\Vishant\AppData\Local\Programs\Python\Python37-32\Scripts\;C:\Users\Vishant\AppData\Local\Programs\Python\Python37-32\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\
+	check version:
+	py -3 -V 
+	python --version
+	
+2. Install virtualenv
+-> pip install virtualenvwrapper-win or pip install virtualenv
+check with command pip freeze or pip list to see all the install software
+virtualenv==16.0.0
+
+3. Create a virtual environment for your project
+-> mkvirtualenv SskvvEnv or virtualenv MyVirtualEnv 
+C:\Users\kapjain\Envs\SskvvEnv
+
+
+4. Activate virtual environment
+-> .\Envs\SskvvEnv\Scripts\activate
+
+Should look like
+(MyVirtualEnv) C:\Users\kapjain\MyProjects\MyVirtualEnv>
+
+5. To deactivate virtual 
+
+-> deactivate
+
+
+	
+    deactivate — Exit out of the current Python virtual environment
+    workon — List available virtual environments
+    workon name_of_environment — Activate the specified Python virtual environment
+    rmvirtualenv name_of_environment — Remove the specified environment.
+
+
+6. Install required packages:
+pip install django
+pip install psycopg2
+pip install djangorestframework
+pip install pygments  # We'll be using this for the code highlighting
+
+OR
+
+Add all the required packages in a file requirements.txt and run the below command:
+-> pip install -r requirements.txt
+
+Upgrade and version:
+->pip install --upgrade django
+->python -m django --version # 2.0.2
+
+
+127.0.0.1:8000/catalog/api/catalog
+
+
+
+7. Create Project and Apps:
+
+django-admin startproject locallibrary
+python manage.py startapp
+
+
+Configure PostgreSQL: #I mportent 1. install PostgreSQL server and 2. psycopg2 and use the below given settings to use postgreSQL
+                      # 1. install redis client and then 2.  redis
+
+a. install postgreSQL in windows: download and execute .exe file
+https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
+postgresql-10.3-2-windows-x64.exe
+
+'USER': 'postgres',
+'PASSWORD': 'cwise',
+
+2. pip install psycopg2
+# Database
+# https://docs.djangoproject.com/en/1.11/ref/settings/#databases
+
+3.Paste the below code in project settings.py 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'locallibrary',
+        'USER': 'postgres',
+        'PASSWORD': 'cwise',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
+    }
+}
+
+
+b. execute following command:
+python manage.py makemigrations <app name optional>
+python manage.py makemigrations catalog
+python manage.py migrate
+python manage.py createsuperuser
+admin
+Sskvv@9$

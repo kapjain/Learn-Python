@@ -1,0 +1,91 @@
+"""
+1. replace "from unittestEx import calc" with import calc 
+2. remove this string from the file
+3. Goto to dir 
+C:\Users\Kapil Jain\git\kapil\TestPython\unittestEx
+4. run pytho command
+python -m unittest test_calc.py
+
+
+Output:
+.
+-------------------------------------------------------------------------
+Ran 1 test in 0.001s
+OK
+
+
+
+
+
+5. if you add the follow line to bottom of your file then you can run command
+python test_calc.py or run the file as module by right click run in eclipse
+if __name__ == '__main__':
+    unittest.main()
+	
+Output:
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
+
+
+
+
+6. each function in a TestCalc class are testcases and it should be start with 'test_' prefix. 
+if you don't give , you will not get any error but system will not run any test case.
+see system ran 0 tests
+
+----------------------------------------------------------------------
+Ran 0 tests in 0.000s
+
+OK
+
+
+
+
+7. see the output if the test case fail: instead of dot we got F
+F
+======================================================================
+FAIL: test_add (__main__.TestCalc)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Kapil Jain\git\kapil\TestPython\unittestEx\test_calc.py", line 8, in test_add
+    self.assertEqual(result, 15)
+AssertionError: 5 != 15
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (failures=1)
+
+
+
+
+8. for each test case system write one dot
+....
+----------------------------------------------------------------------
+Ran 4 tests in 0.001s
+
+OK
+
+9. got calc.py change the mul to ** and run the test_calc.py file
+def mul(a,b):
+    return a**b
+
+..F.
+======================================================================
+FAIL: test_mul (__main__.TestCalc)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Kapil Jain\git\kapil\TestPython\unittestEx\test_calc.py", line 19, in test_mul
+    self.assertEqual(calc.mul(2,3), 6)
+AssertionError: 8 != 6
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.001s
+
+FAILED (failures=1)
+
+
+"""

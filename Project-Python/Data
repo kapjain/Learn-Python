@@ -1,0 +1,64 @@
+Reserved Words
+
+The following list shows the Python keywords. These are reserved words and you cannot use them as constant or variable or any other identifier
+names. All the Python keywords contain lowercase letters only.
+and	exec	not
+assert	finally	or
+break	for	pass
+class	from	print
+continue	global	raise
+def	if	return
+del	import	try
+elif	in	while
+else	is	with
+except	lambda	yield
+***********************************************************************************************************************************************
+import django
+django.setup()
+from pyserver.wms.models import *
+from pyserver.common.login import set_login_context_user, set_facility_and_company
+from pyserver.common import cwlog
+cwlog.change_logfile('BLRSUPPORT')
+set_login_context_user('lgf_blrsupport')
+
+f = open("corona_order.csv", "r")
+order_nbrs = map(lambda s: s.strip(), f.readlines())
+f.close()
+
+
+order_list = OrderHdr.objects.filter(order_nbr__in = order_nbrs, facility_company_xref_id__facility_id__code = '070' ,/
+                                     facility_company_xref_id__company_id__code = '01')
+
+order_list.count()
+
+f=open('order_list.txt','w')
+
+for ord in order_list:
+    f.writelines(ord.order_nbr + '\n')
+
+
+%s - String (or any object with a string representation, like numbers)
+
+%d - Integers
+
+%f - Floating point numbers
+
+%.<number of digits>f - Floating point numbers with a fixed amount of digits to the right of the dot.
+
+%x/%X - Integers in hex representation (lowercase/uppercase)
+
+****************************************************************************************************************************************
+
+
+#The getattr(obj, name, default) − to access the attribute of object.
+
+    #The _hasattr(obj,name) − to check if an attribute exists or not.
+
+    #The _setattr(obj,name,value) − to set an attribute. If attribute does not exist, then it would be created.
+
+    #The _delattr(obj, name) − to delete an attribute.
+
+#_hasattr(emp1, 'salary')    # Returns true if 'salary' attribute exists
+#_getattr(emp1, 'salary')    # Returns value of 'salary' attribute
+#_setattr(emp1, 'salary', 7000) # Set attribute 'salary' at 7000
+#_delattr(emp1, 'salary')    # Delete attribute 'salary'

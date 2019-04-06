@@ -1,0 +1,178 @@
+1. wc:
+wc --help
+wc [options] [filenames]
+wc -l : Prints the number of lines in a file.
+wc -w : prints the number of words in a file.
+wc -c : Displays the count of bytes in a file.
+wc -m : prints the count of characters from a file.
+wc -L : prints only the length of the longest line in a file.
+
+wc tecmint.txt
+12  16 112 tecmint.txt
+12 (number of lines), 16 (number of words) and 112 (number of bytes)
+
+
+
+ls -1 | wc -l
+ls -1 ITM* | wc -l
+
+This command returns the number of objects in the current directory. It uses the lscommand to produce a single-column (-1) listing of the directory contents, which outputs one line per object; this output is piped to wc, which counts the lines (-l), and returns that number.
+
+--------------------------------------------------------------------------------------------------------
+
+2. pipe (|) operator:
+
+The pipe operator is a powerful operator that can be used to join two commands together. Usign this operator output of one command can become input to another command. For example
+
+Display live occurrence of text “myname” in a file myfile.log
+
+tail -f myfile.logs | grep “myname”Count the number of lines in a file myfile1 
+
+cat myfile1 | wc -l Find all running java processes on a system
+
+ps -aef | grep “java”Find all .txt files containing text “myname” 
+
+find . -name “*.txt” | xargs grep “myname”
+
+--------------------------------------------------------------------------------------------------------
+
+pwd
+mkdir
+rmdir
+cd
+
+ls
+
+--------------------------------------------------------------------------------------------------------
+Find:
+Use find from the command line to locate a specific file by name or extension. The following example searches for *.errfiles in the /home/username/ directory and all sub-directories:
+
+NOTE: The find command defaults to being case sensitive. If you want the search for a word or phrase to be case insensitive, use the “-iname” option with the find command. It is the case insensitive version of the “-name” command.
+. current directory 
+find /home/username/ -name "*.err"
+find /home -user exampleuser -mtime 7 -iname ".db"Find all .db files (ignoring text case) modified in the last 7 days by a user named exampleuser
+
+find . -type f -name "*.log" 
+1. Find Files Using Name in Current Directory
+find . -name tecmint.txt
+
+
+2. Find Files Under Home Directory
+find /home -name tecmint.txt
+
+
+3. Find Files Using Name and Ignoring Case
+# find /home -iname tecmint.txt
+
+4. Find Directories Using Name
+# find / -type d -name Tecmint
+
+
+5. Find log Files Using Name
+# find . -type f -name tecmint.log
+
+
+6. Find all log Files in Directory
+# find . -type f -name "*.log"
+
+--------------------------------------------------------------------------------------------------------
+
+Locate:
+locate -i str
+
+--------------------------------------------------------------------------------------------------------
+grep:
+grep [OPTIONS] PATTERN [FILE...]
+grep [OPTIONS] [-e PATTERN | -f FILE] [FILE...] 
+--color  If we use the --color option, our successful matches will be highlighted for us
+-v 	Shows all the lines that do not match the searched string
+
+-c 	Displays only the count of matching lines
+grep -c 'S064432341' uat-app-01-hjoubert.2017-11-17.log
+
+-n 	Shows the matching line and its number
+grep -n 'S064432341' uat-app-01-hjoubert.2017-11-17.log
+
+-i 	Match both (upper and lower) case
+-l 	Shows just the name of the file with the string
+-r  We can extend our search to subdirectories and any files they contain using the -r option, 
+    which tells grep to perform its search recursively.
+*.txt searching in multiple file
+
+--------------------------------------------------------------------------------------------------------
+
+
+view
+more
+less
+
+
+tail:
+By default, tail prints the last 10 lines of each file to standard output. If you specify more than one file, each set of output is prefixed with a header showing the file name.
+-f :This option will cause tail will loop forever, checking for new data at the end of the file(s). When new data appears, it will be printed.
+
+
+head:
+head examples
+
+head myfile.txt
+
+Display the first ten lines of myfile.txt.
+
+head -15 myfile.txt
+
+Display the first fifteen lines of myfile.txt.
+
+head myfile.txt myfile2.txt
+
+Display the first ten lines of both myfile.txtand myfile2.txt, with a header before each that indicates the file name.
+
+head -n 5 myfile.txt myfile2.txt
+
+Displays only the first 5 lines of both files.
+
+head -c 20 myfile.txt
+
+Will output only the first twenty bytes (characters) of myfile.txt. Newlines count as a single character, so if head prints out a newline, it will count it as a byte.
+
+head -n 5K myfile.txt
+
+
+
+scp
+
+
+vi
+rm
+mv
+cat
+tac
+touch
+rename
+cp
+
+
+
+Clear
+Su
+Sudo
+who
+whoami
+
+ps
+kill
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

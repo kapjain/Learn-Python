@@ -1,0 +1,184 @@
+1) Explain what is Django?
+) Mention what are the features available in Django?
+3) Mention the architecture of Django architecture?
+4) Why Django should be used for web-development?
+5) Explain how you can create a project in Django?
+6) Explain how you can set up the Database in Django?
+7) Give an example how you can write a VIEW in Django?
+8) Explain how you can setup static files in Django?
+9) Mention what does the Django templates consists of?
+10) Explain the use of session framework in Django?
+11) Explain how you can use file based sessions?
+12) Explain the migration in Django and how you can do in SQL?
+13) Mention what command line can be used to load data into Django?
+14) Explain what does django-admin.py makemessages command is used for?
+15) List out the inheritance styles in Django?
+16) what is model in django, why do we use that?
+16) Mention what does the Django field class types?
+7) How does Django work?
+8) Which foundation manages the Django web framework?
+Explain the advantages and disadvantages of Django?
+16) What is some typical usage of middlewares in Django?
+18) What is the usage of Django-admin.py and manage.py?
+21) How to handle URLs in Django?
+25) What is the role of Cookie in Django?
+What django collectstatic command does?
+What are Class-based views in Django
+What is recommended way to install Django?
+
+
+
+
+
+When to use the iterator in Django ORM?
+When QuerySets are evaluated in Django?
+How to check installed version of Django?
+What is a context in Django?
+Explain mixins in Django.
+How to create an Constant in Django.
+
+
+
+10.What is the usage of middlewares in Django?
+
+Answer:
+Below are the usage of middlewares in Django:
+•Session management
+•Cross-site request forgery protection
+•Use authentication
+•Content Gzipping
+
+
+
+
+
+2) How to set/unset session in Django?
+
+Setting Session in Django
+
+request.session['key'] = 'value'
+
+Unset Session in Django
+
+del request.session['key']
+
+
+1) How a request is processed in Django?
+
+In Django whenever a request is made by a user, it goes through the following steps:
+
+    Django determines the root URLconf module to use. Ordinarily, this is the value of the ROOT_URLCONF setting, but if the incoming HttpRequest object has a urlconf attribute (set by middleware), its value will be used in place of the ROOT_URLCONF setting.
+    Django loads that Python module and looks for the variable urlpatterns. This should be a Python list of django.urls.path() and/or django.urls.re_path() instances.
+    Django runs through each URL pattern, in order, and stops at the first one that matches the requested URL.
+    Once one of the URL patterns matches, Django imports and calls the given view, which is a simple Python function (or a class-based view). The view gets passed the following arguments:
+        An instance of HttpRequest.
+        If the matched URL pattern returned no named groups, then the matches from the regular expression are provided as positional arguments.
+        The keyword arguments are made up of any named parts matched by the path expression, overridden by any arguments specified in the optional kwargs argument to django.urls.path() or django.urls.re_path().
+        If no URL pattern matches, or if an exception is raised during any point in this process, Django invokes an appropriate error-handling view.
+        
+        
+        
+Question: What is djanog?
+Answer:
+Django is high level python web framework, that encourage rapid development of web application, clean and pragmatic design. It let us build a high performance web application with less code quickly.
+Django focus on automating as much as possible and work on DRY principle.
+
+
+Question: What is DRY priciple.?
+Answer: 
+In software engineering, don't repeat yourself (DRY)DRY is a principle of software development aimed at reducing repetition of software patterns, replacing them with abstractions; and several copies of the same data, using data normalization to avoid redundancy.
+The DRY principle is stated as "Every piece of knowledge must have a single, unambiguous, authoritative representation within a system"
+
+
+Question: What are the main features of Django Framework?
+Answer:
+1. Development Environment  Django comes with a lightweight web server to facilitate end-to-end application development and testing.
+2. Object-Relational Mapping (ORM) Support  Django provides a bridge between the data model and the database engine, and supports a large set of database systems including MySQL, Oracle, Postgres, etc.
+3. Multilingual Support  Django supports multilingual websites through its built-in internationalization system. So you can develop your website, which would support multiple languages.
+4. Administration GUI  Django provides a nice ready-to-use user interface for administrative activities. Save yourself the tedious work of creating interfaces for people to add and update content. Django does that automatically,
+5. Automatic database table creation. The migrate command is an elegant and distinctive feature of Django that looks at all your models and automatically creates tables in your database for any that don’t exist already.
+6. A powerful cache framework for dynamic websites. This system lets you cut down on expensive calculations by caching dynamic pages. There are a few levels of granularity here: You can cache individual pages or just the most expensive views to produce.
+
+
+What is session in django?
+Django provides session that lets you store and retrive data on a per-site-visitor basis. Django abstract the process of sending and receiving the cookies, by placing a session id cookies on client side and storring all related that on the server side. So data itself is not stored client side. This is nice from a security perspective.
+
+Web Apps and Session Objects
+cs 110 notes
+Web apps sometimes need to remember information across multiple user requests. You can do this using a session object.
+HTTP Requests are Stateless
+Web requests are stateless. 'stateless' means 'memory-less'. The 'state' of the world-- all variables-- is lost on each request.
+The server doesn't remember variables on each browser request. Your server code may have data members, but they're re-initialized on each request.
+Session Variables
+Session variables are the way to get around the statelessness of web requests.
+Session variables remember data from request to request, and specifically for each user. Account info is one type of data stored in a session object.
+Session variables live for a user session. Typically a user session will time out after some period of user inactivity (e.g., 30 minutes)
+As session variables are user-specific, they cannot be used to share data between users-- for that the web app stores data in a database.
+
+Session variables sometimes use cookies to record information. Cookies are little bits of information stored on the client's computer.
+Session variables are generally key-value pairs.
+
+
+
+Differenct file in the 
+1. settings.py contains all the website settings. This is where we register any applications we create, the location of our static files, database configuration details, etc.  
+2. urls.py defines the site url-to-view mappings. While this could contain all the url mapping code, it is more common to delegate some of the mapping to particular applications, as you'll see later. 
+3. wsgi.py is used to help your Django application communicate with the web server. You can treat this as boilerplate.
+4. The manage.py : script is used to create applications, work with databases, and start the development web server. 
+
+•	A migrations folder, used to store "migrations" — files that allow you to automatically update your database as you modify your models. 
+•	_init_.py — An empty file that tells Python that this directory should be considered a Python package. It is an empty file created here so that Django/Python will recognise the folder as a Python Package and allow you to use its objects within other parts of the project. 
+
+admin.py  This file helps you make the app modifiable in the admin interface.
+
+models.py This is where all the application models are stored.
+
+tests.py  This is where your unit tests are.
+
+views.py  This is where your application views are.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The http.cookies module defines classes for abstracting the concept of cookies, an HTTP state management mechanism. It supports both simple string-only cookies, and provides an abstraction for having any serializable data-type as cookie value.
+
+Note
+On encountering an invalid cookie, CookieErroris raised, so if your cookie data comes from a browser you should always prepare for invalid data and catchCookieError on parsing.
+
+Creating and Setting a Cookie
+
+Cookies are used as state management, and as such as usually set by the server to be stored and returned by the client. The most trivial example of creating a cookie looks something like:
+
+import Cookie c = Cookie.SimpleCookie() c['mycookie'] = 'cookie_value' print c 
+
+The output is a valid Set-Cookie header ready to be passed to the client as part of the HTTP response:
+
+$ python Cookie_setheaders.py Set-Cookie: mycookie=cookie_value 
+
+Morsels
+
+It is also possible to control the other aspects of a cookie, such as the expiration, path, and domain. In fact, all of the RFC attributes for cookies can be managed through the Morsel object representing the cookie value.
+
+
+
+
+
+
+
+fieldsets = (
+        (None, {'fields': ('book','imprint', 'id')}),
+        ('Availability', {'fields': ('status', 'due_back','borrower')}),
+		)

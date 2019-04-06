@@ -1,0 +1,151 @@
+print five and zero and two --- you would have gotten 0 as the result. You could say that and "returns the first falsey value it finds, and if it doesn't find anything, returns the last result.
+
+format()
+memoryview()
+translate
+maketrans
+format_map
+
+NaN: Not a Number
+inf: infinity case insensitive
+infinity
+
+
+random
+import copy, collections
+import time, datetime, decimal, re, pytz, timedelta
+
+import itertools
+import obutils
+import socket
+import operator
+traceback
+shutil, glob,
+from optparse import OptionParser
+from lxml import etree as ET
+from xml.etree.ElementTree import Element, SubElement, tostring
+
+
+from subprocess import Popen, PIPE
+import sys, os,  
+import zipfile
+import smtplib
+import string
+from email import Encoders
+import codecs
+
+from __future__ import (absolute_import, print_function, unicode_literals, division)
+from abc import ABCMeta, abstractmethod
+import fnmatch
+from ftplib import FTP
+import json, simplejso
+from StringIO import StringIO
+from tempfile import mkstemp
+
+import getpass, pwd, ConfigParser
+import psycopg2
+conn = psycopg2.connect(db_conn_string  % (dbname, username, port, password, host))
+import curses
+import curses.panel
+textwrap
+urllib, pickle
+uuid
+import threading check distribued lock
+	
+	
+	
+	
+	
+	
+	
+	
+if intf_module_str:
+	intf_module = __import__(intf_module_str, globals(), locals(),
+							 'pyserver.cmd')
+
+							 
+from django.db.models.aggregates import Min, Max
+from django.db import transaction, connection
+from django.db.models import Q, F, Sum, Count
+from django.db.utils import IntegrityError
+from django.db import connections
+from django.db.models import query, sql
+
+
+final_filepath = os.path.join(filedir, filename)
+os.makedirs(filedir.encode("utf-8"))
+os.chmod(filedir.encode("utf-8"), 0777)
+encode
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+tz = pytz.timezone(CWLoginContext.facility.time_zone_id.tzdata_code)
+activity_data_dict['create_date'] = tz.localize(activity_obj.create_ts).strftime("%Y%m%d000000")
+activity_data_dict['create_ts'] = tz.localize(activity_obj.create_ts).strftime("%Y%m%d%H%M%S")
+importtant
+https://www.edureka.co/blog/interview-questions/python-interview-questions/
+
+
+Django provides session that lets you store and retrive data on a per-site-visitor basis. Django abstract the process of sending and receiving the cookies, by placing a session id cookies on client side and storring all related that on the server side. So data itself is not stored client side. This is nice from a security perspective.
+
+
+def log_entry(func):
+    from functools import wraps
+    
+    @wraps(func)
+    def wrapper_func(*args, **kwargs):
+        from pyserver.common import cwlog
+        cwlog.debug("Timing Function - {name}".format(name = func.__name__))
+        ret = func(*args, **kwargs)
+        cwlog.debug("Exiting function - {name}".format(name = func.__name__))
+        return ret
+    return wrapper_func
+
+	
+chkcmd='ps -ewwf | grep run_replentemplate | grep %s | grep CO_%s | grep FAC_%s | grep -v grep' % (
+								lgf_env, CWLoginContext.company.code, CWLoginContext.facility.code)
+# check if we want to allow more than one wave per fac/co at a time
+# even if thats allowed 
+one_wave_per_facco=get_company_parm_value(parm_key='ONLY_ONE_WAVE_PER_FACCO', default_value=True, value_type=bool)
+chk_proc=Popen([chkcmd, ''], stdout=PIPE, stderr=PIPE, shell=True)
+retvalue = chk_proc.communicate()[0]
+
+
+	cmd_string = "python " + os.getenv('LGF_HOME') + "/pyserver/cmd/run_replentemplate.py %s %s %s %s %s WT_%d CO_%s FAC_%s" % (
+				facility_id, company_id, replenishment_template_id, CWLoginContext.user.auth_user_id.username ,run_number, 
+				rt.id, CWLoginContext.company.code, CWLoginContext.facility.code)
+else :
+	#re-run
+	cmd_string = "python " + os.getenv('LGF_HOME') + "/pyserver/cmd/run_replentemplate.py %s %s %s %s %s CO_%s FAC_%s" % (
+				facility_id, company_id, replenishment_template_id, CWLoginContext.user.auth_user_id.username ,run_number,
+				CWLoginContext.company.code, CWLoginContext.facility.code)
+
+cwlog.debug(cmd_string)
+subproc = Popen([cmd_string, ''], env=os.environ, shell=True, stderr=PIPE)
+pid = subproc.pid

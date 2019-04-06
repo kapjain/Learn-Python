@@ -1,0 +1,78 @@
+Here is the list of available Python database interfaces − Python Database Interfaces and APIs. You must download a separate DB API module for each database you need to access. For example, if you need to access an Oracle database as well as a MySQL database, you must download both the Oracle and the MySQL database modules.
+
+The DB API provides a minimal standard for working with databases using Python structures and syntax wherever possible. This API includes the following −
+
+Importing the API module.
+Acquiring a connection with the database.
+Issuing SQL statements and stored procedures.
+Closing the connection
+
+
+
+Database Connection
+Before connecting to a MySQL database, make sure of the following points −
+
+You have created a database TESTDB.
+
+You have created a table EMPLOYEE in TESTDB.
+
+This table has fields FIRST_NAME, LAST_NAME, AGE, SEX and INCOME.
+
+User ID "testuser" and password "test123" are set to access TESTDB.
+
+Python module PyMySQL is installed properly on your machine.
+
+You have gone through MySQL tutorial to understand MySQL Basics.
+
+Example
+#!/usr/bin/python3
+
+import PyMySQL
+
+# Open database connection
+db = PyMySQL.connect("localhost","testuser","test123","TESTDB" )
+
+# prepare a cursor object using cursor() method
+cursor = db.cursor()
+
+# execute SQL query using execute() method.
+cursor.execute("SELECT VERSION()")
+
+# Fetch a single row using fetchone() method.
+data = cursor.fetchone()
+print ("Database version : %s " % data)
+
+# disconnect from server
+db.close()
+
+
+
+
+import psycopg2
+from django.db import transaction, connection
+
+cursor = connection.cursor()
+cursor.execute(query)
+
+rows = cursor.fetchall()
+        
+for row in rows :
+	exec_qry = row[0]
+        transaction.commit()
+    except Exception, e:
+        print str(e)
+        transaction.rollback()
+cursor.execute(exec_qry)
+
+
+    try:
+        conn = psycopg2.connect(db_conn_string
+                                    % (dbname, username, port, password, host))
+        print "Connecting to database %s successful..." % dbname
+    except:
+        raise Exception("Unable to connect to the database")
+        
+help="db connection string in the form of "
+                            "<username>:<password>@<host>:<port>/<db_name>"
+                            " use None for password to enter password in "
+                            "interactive mode")
