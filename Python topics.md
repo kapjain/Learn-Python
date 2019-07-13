@@ -9,6 +9,7 @@
 - Understanding Pythonpath
 - IDEs eclipse, pycharm
 - PIP
+- PEP8 (flake8)
 - Identifiers
 - Keywords(Reserve words)
 - Indentation
@@ -181,7 +182,12 @@ Python Nose Framework
 
 15. logging
 
-16. multi threading (Synchronizing Threads, limitations of threading in python)
+16. Multi threading
+- Thread creation
+- Synchronizing Threads
+- limitations of threading in python
+- multiprocess architecture
+
 
 17. Regular Expressions
 - Understanding Regular Expressions
@@ -194,7 +200,8 @@ Python Nose Framework
 18. database_access
 - NoSQL MongoDB (DB https://www.javatpoint.com/python-mongodb)
 - SQL sqlite (https://www.javatpoint.com/python-sqlite)
-- postgresql
+- Postgresql
+- Oracle
 - Fundamentals of Database Interaction with Python
 - How to Create a Database using SQLite 3?
 - Understanding CRUD Operations
@@ -268,9 +275,12 @@ Django Forms
 - Fat Models, skinny views
 - URLs: Reverse and get_absolute_url
  
+Caching and cokkie
+- Memcache and Redis
+
 20. REST API
 - Micro Services
-- Micro services
+- authentication and authorisation
 - Rest API/Framework and Test Cases
 - Micro-services, concept and architecture 
 - Writing Micro-services
