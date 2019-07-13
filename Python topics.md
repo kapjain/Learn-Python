@@ -40,15 +40,20 @@
 
 3. Standard Data Types and Data Type Conversion
 - String (all the method of string and all the string related operators and operations)
+- bytes
+- bytearray
 - List
 - Tuple
 - Dictionary
 - set
 - frozenset
 - None
+- range
 - Numbers (complex, float, int, long)
 - boolean
 - Type Conversion
+- comprehensions(list, set, dictionary)
+- collections (orderDict)
 
 
 4. Decesion making and Loops
@@ -74,7 +79,7 @@
 - yield statement
 - scope of a variable(local, nonlocal, global)
 - Recursion
-- all built in functions
+- all built in functions(map, reduce, filter, zip)
  
 6. Packages and module
 - Creating Python Packages and modules
@@ -119,6 +124,7 @@
 - Instantiation
 - Method (classmethod, staticmethod, instance method, Private methods)
 - Object
+- super keyword
 - Operator overloading
 - getattr, hasattr,setattr,delattr
 - Built-In Class Attributes(__dict__ ,__doc__,__name__,__module__,__bases__)
