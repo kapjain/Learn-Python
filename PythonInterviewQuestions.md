@@ -49,13 +49,17 @@
 49. Name some of the python error tht you know?
 50. Why dictionary should be immutable?
 51. Can we write the code inside __init__.py file?
-
-
-
-
-
-
-
-
-
-
+52. Why was the language called python?
+53. Is python case sensitive langugae?
+54. What are all the operating system that python can run on?
+55. What is the difference between docstring and comment?
+56. What's wrong with import all?
+57. Meaning of single and double underscore before an object name?
+58. How to call an external command in python?
+59. What is the difference between raw_input and input method?
+60. Why python is not fully object oriented language?
+61. What is if __name__ == "__main__"? 
+62. What is run time and compile time in python?
+63. What is the purpose of pass keyword in python?
+64. How to implement Enum in python?
+65. How to kill a thread in python? (# http://net-informations.com/python/default.htm)
