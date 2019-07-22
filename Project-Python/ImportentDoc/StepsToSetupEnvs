@@ -18,7 +18,7 @@ virtualenv==16.0.0
 3. Create a virtual environment for your project
 -> mkvirtualenv SskvvEnv or virtualenv MyVirtualEnv 
 C:\Users\kapjain\Envs\SskvvEnv
-
+mkvirtualenv SskvvEnv --no-site-packages(If you see any error when installing any packages)
 
 4. Activate virtual environment
 -> .\Envs\SskvvEnv\Scripts\activate
@@ -32,10 +32,10 @@ Should look like
 
 
 	
-    deactivate — Exit out of the current Python virtual environment
-    workon — List available virtual environments
-    workon name_of_environment — Activate the specified Python virtual environment
-    rmvirtualenv name_of_environment — Remove the specified environment.
+    deactivate â€” Exit out of the current Python virtual environment
+    workon â€” List available virtual environments
+    workon name_of_environment â€” Activate the specified Python virtual environment
+    rmvirtualenv name_of_environment â€” Remove the specified environment.
 
 
 6. Install required packages:
