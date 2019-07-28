@@ -233,6 +233,7 @@ l.remove(30) # if the given object is not present in the list. ValueError: list.
 
 
 #clear(), no argument
+# return: None
 l = [4, 5, 3, 9, 1, 10]
 l.clear()
 print(l)#[]
@@ -249,7 +250,8 @@ del l #it delete whole list with structure
 #print(l) NameError: name 'l' is not defined
 
 
-#count(object or value) count the no of times value are there
+#count(object or value) 
+# return: count the no of times value are there
 l = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1,10]
 print(l.count(10))#2
 print(l.count(12))#0
@@ -258,10 +260,11 @@ print(l.count(12))#0
 
 
 
-# index(value, start index, end index), note: return the lowest index
+# index(value, start index, end index), 
+# return the lowest index
 l = [1,2,3,4,5,1]
 print(l.index(1))#0
-print(l.index(2,0,4))#
+print(l.index(2,0,4))#1
 
 #print(l.index(6))ValueError: 6 is not in list
 #print(l.index()) TypeError: index() takes at least 1 argument (0 given)
