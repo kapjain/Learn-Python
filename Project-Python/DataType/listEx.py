@@ -3,6 +3,7 @@
 2. support slicing
 3. can contain mutable object
 4. can contain duplicate element
+5. can contain multiple type of element
 
 List: list is a sequential collection of heterogeneous element and mutable data structure.
 its index start from 0 to n-1 or -n to -1
@@ -61,30 +62,49 @@ input("wait to press enter!")
 #list[start index: end index: step value]
 #start index is inclusive while end index is exclusive
 # Note: if the step value is positive, it will move forward 0 to end and if the step value is negative, it will move backward end to 0
-print(l5[1])#1
-print(l5[-3])#7
-print(l5[1:7:1])#[1,2,3,4,5,6]
-print(l5[1:7:2])#[1,3,5]
-print(l5[1:5])#[1,2,3,4]
-print(l5[5:6])#[5]
-print(l5[:-2])
-input()
+l = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+print(l[3])  # 3
+print(l[-3])  # 7
 
-print(l5[:])#[0,1,2,3,4,5,6,7,8,9]
-print(l5[::])#[0,1,2,3,4,5,6,7,8,9]
+print(l[1:5])  # [1, 2, 3, 4]
+print(l[5:6])  # [5]
+print(l[5:5])  # [] -->
+print(l[6:4])  # [] --> when step is positive and start index is greater than(>) end index result will be []
 
-print(l5[::1])#[0,1,2,3,4,5,6,7,8,9]
-print(l5[3:])#[3,4,5,6,7,8,9]
-print(l5[:6])#[0,1,2,3,4,5]
+print(l[5:])  # [5, 6, 7, 8, 9]
+print(l[:3])  # [0, 1, 2]
+print(l[:])  # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+print(l[-1:5])  # [] -->
+print(l[1:-5])  # [1, 2, 3, 4]
+print(l[-1:-5])  # [] -->
+print(l[-5:-1])  # [5, 6, 7, 8]
+
+print(l[-2:])  # [8, 9]
+print(l[:-2])  # [0, 1, 2, 3, 4, 5, 6, 7]
+
+print(l[1:7:1])  # [1, 2, 3, 4, 5, 6]
+print(l[1:7:2])  # [1, 3, 5]
+print(l[1:2:2])  # [1]
+print(l[1:1:2])  # [] -->
 
 
-print(l5[-9:-6:1])#[1,2,3]
-print(l5[-1:-5:-1])#[9,8,7,6]
-print(l5[-1:-5:-2])#[9,7]
+print(l[1:7:])  # [1, 2, 3, 4, 5, 6]
+print(l[1::2])  # [1, 3, 5, 7, 9]
+print(l[:5:2])  # [0, 2, 4]
+print(l[::2])  # [0, 2, 4, 6, 8]
+print(l[::])  # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-print(l5[9:0])#[]
-print(l5[6:3:1])#[] if start index> end index result will be []
-print(l5[::-1])#[9, 8, 7, 6, 5, 4, 3, 2, 1, 0] Reverse
+print(l[-9:-6:1])  # [1, 2, 3]
+
+print(l[1:7:-1])  # [] --> when step is negative and start index is less than(<) end index result will be []
+print(l[7:1:-1])  # [7, 6, 5, 4, 3, 2]
+print(l[:1:-1])  # [9, 8, 7, 6, 5, 4, 3, 2]
+print(l[3::-1])  # [3, 2, 1, 0]
+print(l[::-1])  # [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+
+print(l[-1:-7:-1])  # [9, 8, 7, 6, 5, 4]
+print(l[-7:-1:-1])  # [] -->
 
 # updating value in the list
 l3[0] = 10
