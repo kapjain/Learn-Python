@@ -3,6 +3,8 @@
 1. Immutable
 2. support slicing
 3. can contain mutable object 
+4. can contain duplicate element
+5. can contain multiple type of element
 
 ['__add__', '__class__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', 
 '__getnewargs__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__',
@@ -14,13 +16,9 @@
 
 t1 = ()#empty tuple
 t2 = tuple()#empty tuple
-
 t3 = (1,)#single element tuple
-
 t4 = (1, 2, 3, 4)
-
 t5 = (1,'hello',"Hi jone",3.14,(1,2,3))
-
 t6 = (1,2,[1,2,3]) # can container mutable object
 
 #tuple([iterable]): optional. an object that could be a sequence (string, tuples) or collection (set, dictionary) or iterator object
@@ -76,6 +74,6 @@ print(l.index(2,0,4))#
 #print(l.index(6))ValueError: 6 is not in list
 #print(l.index()) TypeError: index() takes at least 1 argument (0 given)
 #print(l.index(1,10,20)) ValueError: 1 is not in list
-#print(l.index(1,2)) ValueError: 1 is not in list
+print(l.index(1,2))  # 5
 #print(l.index(5,0,4)) ValueError: 5 is not in list
-print(l.index(1,0,4))#0
+print(l.index(1,0,4))  # 0
