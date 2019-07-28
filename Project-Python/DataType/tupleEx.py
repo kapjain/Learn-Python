@@ -56,6 +56,20 @@ print(l)# (0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
 # l = tuple(range(10), [1,2,3]) TypeError: tuple() takes at most 1 argument (2 given)
 
 
+# basic operations same as list
+l1 = (1, 2, 3, 4, 5)
+l2 = (6, 7, 8, 9, 10)
+l3 = ('hi', 'this', 'is', 'kapil')
+
+print(l1 + l2)  # (1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+print(l1 * 2)  # (1, 2, 3, 4, 5, 1, 2, 3, 4, 5)
+print(1 in l1)  # True
+print(len(l1))  # 5
+print(min(l1))  # 1 it doesn't works with mix list like int and str are in same list
+print(max(l1))  # 5
+print(min(l3))  # hi check according to dictionary sequence
+print(max(l3))  # this
+
 
 #count(object or value) count the no of times value are there
 l = (10, 9, 8, 7, 6, 5, 4, 3, 2, 1,10)
