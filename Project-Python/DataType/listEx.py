@@ -18,7 +18,7 @@ list operation are creation, accessing, modification, append, Concatenate , dele
 """
 l = [] # empty list
 l1 = list() # empty list list(sequence)
-l2 = [1]# single element list
+l2 = [1,]# single element list
 l3 = [1, 2, 3, 4, 5] # same type of element
 l4 = [1,'hello', "Hi jone", 3.14, [1,2,3], {1,2,3} ] # different type of element with mutable object
 
@@ -105,6 +105,8 @@ print(l[::-1])  # [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
 
 print(l[-1:-7:-1])  # [9, 8, 7, 6, 5, 4]
 print(l[-7:-1:-1])  # [] -->
+
+
 
 # updating value in the list
 l3[0] = 10
