@@ -251,7 +251,6 @@ l.remove(30) # if the given object is not present in the list. ValueError: list.
 #l.remove(10,8) TypeError: remove() takes exactly one argument (2 given)
 
 
-
 #clear(), no argument
 # return: None
 l = [4, 5, 3, 9, 1, 10]
@@ -279,7 +278,6 @@ print(l.count(12))#0
 #print(l.count()) TypeError: count() takes exactly one argument (0 given)
 
 
-
 # index(value, start index, end index), 
 # return the lowest index
 l = [1,2,3,4,5,1]
@@ -294,7 +292,6 @@ print(l.index(2,0,4))#1
 print(l.index(1,0,4))#0
 
 
-
 #reverse(), it reverse the list
 l = [1,2,3,4,5]
 l.reverse()
@@ -306,7 +303,6 @@ print(l1)#[3.4, 'kapil jain', 'dog', 'hi', 1]
 #l.reverse(1) TypeError: reverse() takes no arguments (1 given)
 
 
-
 #sort() no argument. it sort the list
 l = [1,2,3,4,5,1]
 l.sort()
@@ -315,3 +311,12 @@ print(l)# [1, 1, 2, 3, 4, 5]
 l1 = [1,'hi', 'dog','kapil jain', 3.4]
 #l1.sort() TypeError: '<' not supported between instances of 'str' and 'int'
 
+
+#copy()  Return a shallow copy of the list.
+l = [1,2,[2,3]]
+m = l.copy()
+print(m)  # [1, 2, [2, 3]]
+print(l)  # [1, 2, [2, 3]]
+l[2][0]=5
+print(m)  # [1, 2, [5, 3]]
+print(l)  # [1, 2, [5, 3]]
