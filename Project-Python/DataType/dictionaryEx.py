@@ -3,7 +3,8 @@
 1. Mutable
 2. Does not support slicing
 3. value can contain mutable object but key must be immutable
-4. Key must be unique otherwise it take only the last value of the key
+4. Value can be duplicate but Key must be unique otherwise it take only the last value of the key
+5. it can contain different types of data
 
 
 '__class__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__',
@@ -15,13 +16,9 @@
 
 d1 = {}#empty dictionary
 d2 = dict()#empty dictionary
-
-d3 = {'a' : 1}#single element dictionary
-
+d3 = {'a' : 1,}#single element dictionary
 d4 = {'a' : 1, 'b' : 2, 'c' : 3}
-
-d5 = {'a' : 1, 1 : 2, 2.5 : 3}
-
+d5 = {'a' : 1, 1 : 2, 2.5 : 2}
 d6 = {'a' : {1,2,3}, 'b' : 2, 'c' : 3} #value can contain mutable object but key must be immutable
 #d7 = {[1,2,3] : 1, 'b' : 2, 'c' : 3} TypeError: unhashable type: 'list'
 #d7 = {{1,2,3} : 1, 'b' : 2, 'c' : 3} TypeError: unhashable type: 'set'
@@ -46,23 +43,25 @@ print(type(numbers))
 
 empty = dict()
 print('empty = ',empty)
-print(type(empty))
+print(type(empty))  # <class 'dict'>
 # keyword argument is not passed
+
 numbers1 = dict([('x', 5), ('y', -5)])
-print('numbers1 =',numbers1)
+print('numbers1 =',numbers1)  # {'x': 5, 'y': -5}
 
 # keyword argument is also passed
 numbers2 = dict([('x', 5), ('y', -5)], z=8)
-print('numbers2 =',numbers2)
+print('numbers2 =',numbers2)  # {'x': 5, 'y': -5, 'z': 8}
 
 # zip() creates an iterable in Python 3
 numbers3 = dict(dict(zip(['x', 'y', 'z'], [1, 2, 3])))
-print('numbers3 =',numbers3)
+print('numbers3 =',numbers3)  # {'x': 1, 'y': 2, 'z': 3}
 
 # keyword argument is also passed
 numbers3 = dict({'x': 4, 'y': 5}, z=8)
 print('numbers3 =',numbers3)
-#dict([('a',1,3),(2,'b',2)]) ValueError: dictionary update sequence element #0 has length 3; 2 is required. Every index should have 2 values pair
+#dict([('a',1,3),(2,'b',2)]) ValueError: dictionary update sequence element 
+#0 has length 3; 2 is required. Every index should have 2 values pair
 
 
 #accessing value and updating value
@@ -80,10 +79,11 @@ d2 = {'a':1, 'b':2, 'c':3}
 #print(d1*4) TypeError: unsupported operand type(s) for *: 'dict' and 'int'
 #d = d1 + d2 TypeError: unsupported operand type(s) for +: 'dict' and 'dict'
 
+# 'code' always perform these functionEx on keys
 print(1 in d2) # False
 print('a' in d2) # True
 print(len(d1)) # 3
-print(min(d)) # 'code' always perform these functionEx on keys
+print(min(d2)) # 'a'  
 print(max(d1)) #'name'
 
 
