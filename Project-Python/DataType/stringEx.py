@@ -115,12 +115,21 @@ print(s.title())  # Hi This Is Python
 
 
 
-# center(width[,fillchar]) The method center() returns centered in a string of length width. Padding is done using the specified fillchar. Default filler is a space.
-s = 'kapil'
-print(s.center(10,'@')) # '@@kapil@@@' filling start from left, left right left right so on
-print(s.center(10)) # '  kapil   '
-print("abcdef".center(0)) # 'abcdef' The entire string is printed when the argument passed to center() is less than the length of the string.
-print('*', "abcdef".center(7), '*', sep='') #  Padding is done towards the right-hand-side first when the final string is of even length.
+# center(width,fillchar): The method center() returns centered in a string of length width. Padding is done using the specified fillchar. Default filler is a space.
+# 'abcdef' The entire string is printed when the argument passed to center() is less than the length of the string.
+print("abcdef".center(0))
+
+# When string lenth is odd and width is even: Start from right
+print('a'.center(10,'*'))  # '****a*****'
+print('aaa'.center(10,'*')  # '***aaa****'
+# When string lenth is even and width is odd: Start from left
+print('aa'.center(11,'*')  # '*****aa****'
+print('aaaa'.center(11,'*')  # '****aaaa***'
+# When string lenth is even and width is also even or vice versa..
+print('aaaa'.center(10,'*'))  # '***aaaa***'
+print('aaa'.center(11,'*'))  # '****aaa****'
+
+      
 
 #zfill(width) The zfill() method pads string on the left with zeros to fill width.
 s = 'kapil'
@@ -128,10 +137,8 @@ print(s.zfill(20)) # '000000000000000kapil'
 
 
 
-#str.ljust(width[, fillchar]): The method ljust() returns the string left justified in a string of length width. Padding is done using the specified 
-#fillchar (default is a space). The original string is returned if width is less than len(s).
-#str.rjust(width[, fillchar]):  The rjust() method returns the string right justified in a string of length width. Padding is done using the specified
-#fillchar (default is a space). The original string is returned if width is less than len(s).
+#str.ljust(width, fillchar=' ' or fillchar=single_space): The original string is returned if width is less than len(s).
+#str.rjust(width, fillchar=' ' or fillchar=single_space): The original string is returned if width is less than len(s).
 s = "this is string example....wow!!!"
 
 print (s.ljust(50, '*')) #this is string example....wow!!!******************
@@ -143,26 +150,33 @@ print (s.rjust(50, '*')) #******************this is string example....wow!!!
 s = "hello all this is the python language of the world"
 print(s.count('h')) # 5
 print(s.count('the')) #2
-# print("xyyzxyzxzxyy".count('xyy', 0, 100)) An error will not occur if the end value is greater than the length of the string itself.
+print(s.count('th'))  #4
+print("xyyzxyzxzxyy".count('xyy', 0, 100)) #2 No error if the end value is greater than the length of the string itself.
 print("xyyzxyzxzxyy".count('xyy', 0, 12)) # 2
 
 
 
-#The startswith() method checks whether the string starts with str, optionally restricting the matching with the given indices start and end.
-#It returns True if the string ends with the specified suffix, otherwise return False optionally restricting the matching with the given indices start and end.
-
+#startswith(prefix, start, end): This method check whether the string start with given substring. return true if it is there else false
 s = "this is string example....wow!!!"
 print (s.startswith( 'this' )) #True
 print (s.startswith( 'string', 8 ))#True
 print (s.startswith( 'this', 2, 4 ))#False
 
+s = "hello all this is the python language of the world"
+print(s.endswith(('hello','world'))) # True prefix can also be a tuple of strings to try.
 
+
+
+#The startswith(prefix, start, end): This method check whether the string start with given substring. return true if it is there else false      
 suffix='!!'
 print (s.endswith(suffix))#True
 print (s.endswith(suffix,20))#True
 suffix='exam'
 print (s.endswith(suffix))#False
 print (s.endswith(suffix, 0, 19))#True
+      
+s = "hello all this is the python language of the world"
+print(s.endswith(('the','world'))) #True suffix can also be a tuple of strings to try.
 
 
 
