@@ -63,22 +63,19 @@ print('numbers3 =',numbers3)
 #dict([('a',1,3),(2,'b',2)]) ValueError: dictionary update sequence element 
 #0 has length 3; 2 is required. Every index should have 2 values pair
 
-
 #accessing value and updating value
 d = {'name': 'john','code':6734, 'dept': 'sales'}
-
 print(d['name']) #'john'
-
 d['name'] = 'Kapil'
 print(d['name']) # 'Kapil'
 
 
+# Basic operation
 d1 = {'name': 'john','code':6734, 'dept': 'sales'}
 d2 = {'a':1, 'b':2, 'c':3}
 
 #print(d1*4) TypeError: unsupported operand type(s) for *: 'dict' and 'int'
 #d = d1 + d2 TypeError: unsupported operand type(s) for +: 'dict' and 'dict'
-
 # 'code' always perform these functionEx on keys
 print(1 in d2) # False
 print('a' in d2) # True
@@ -89,38 +86,30 @@ print(max(d1)) #'name'
 
 
 
-# The method fromkeys() creates a new dictionary with keys from seq and values set to value.
-# dict.fromkeys(seq[, value])) value is the initial value of all key, default value is None
+# fromkeys(iterable, value=None): The method fromkeys() creates a new dictionary with keys from seq and value set to value.
+# return: it return a dictionary with given defult value like {1: 'Null', 2: 'Null', 3: 'Null'} 
 d1 = {'name': 'john','code':6734, 'dept': 'sales'}
-
 seq = ('name', 'age', 'sex')
 
-d = dict.fromkeys(seq)
-d #{'name': None, 'age': None, 'sex': None}
-d3 = dict.fromkeys(seq,10)
-d3 #{'name': 10, 'age': 10, 'sex': 10}
-d4 = dict.fromkeys(seq,(1,2,3))
-d4 # {'name': (1, 2, 3), 'age': (1, 2, 3), 'sex': (1, 2, 3)}
+print(dict.fromkeys(seq)) # {'name': None, 'age': None, 'sex': None}
+print(dict.fromkeys(seq,10))  # {'name': 10, 'age': 10, 'sex': 10}
+print(dict.fromkeys(seq,(1,2,3)))  # {'name': (1, 2, 3), 'age': (1, 2, 3), 'sex': (1, 2, 3)}
+print(dict.fromkeys(range(1,3)))  # {1: None, 2: None}
+print(dict.fromkeys(d1))  # {'name': None, 'code': None, 'dept': None}
 
-d5 = dict.fromkeys(range(1,3))
-d5  # {1: None, 2: None}
-
-d5 = dict.fromkeys(d1)
-d5 # {'name': None, 'code': None, 'dept': None}
-
-# d5 = dict.fromkeys(1) TypeError: 'int' object is not iterable
+# print(dict.fromkeys(1)) TypeError: 'int' object is not iterable
+# print(dict.fromkeys([1,2,3],1,2)) TypeError: fromkeys expected at most 2 arguments, got 3
 
 
 
-
-# dict.get(key, default=None) The method get() returns a value for the given key. If key is not available then returns default value None.
+# get(key, default=None): 
+# return: The method get() returns a value for the given key. If key is not available then returns default value.
 d = {'Name': 'Zara', 'Age': 27}
-
 print(d.get('Name')) #'Zara'
 print(d.get('Sex')) # None
-
 print(d.get('Sex','Not available')) #'Not available'
 # d.get()  TypeError: get expected at least 1 arguments, got 0
+# d.get('sex','M','F') TypeError: get expected at most 2 arguments, got 3
 
 
 # dict.setdefault(key, default = None) The method setdefault() is similar to get(), but will set dict[key] = default if key is not already in dict.
