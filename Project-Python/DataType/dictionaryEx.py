@@ -117,7 +117,8 @@ print(d.get('Sex','Not available')) #'Not available'
 d = {'Name': 'Zara', 'Age': 7}
 print ("Value : %s" %  d.setdefault('Age', None)) # Value : 7
 print ("Value : %s" %  d.setdefault('Sex', None)) # Value : None
-print (d) # {'Name': 'Zara', 'Sex': None, 'Age': 7}
+print ("Value : %s" %  d.setdefault('Mobile', '783684')) # value: 783684
+print (d) # {'Name': 'Zara', 'Sex': None, 'Age': 7,'Mobile':'783684'}
 
 
 
