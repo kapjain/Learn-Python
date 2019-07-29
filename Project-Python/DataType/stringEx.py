@@ -1,4 +1,10 @@
 """
+1. Immutable
+2. support slicing
+3. can contain mutable object
+4. can contain duplicate element
+5. can contain multiple type of element
+
 The str() method returns the "informal" or nicely printable representation of a given object.
 
 str(object='')
@@ -35,10 +41,7 @@ b = bytes('pyth\xf6n', encoding='utf-8')
 
 #UnicodeDecodeError: 'ascii' codec can't decode byte 0xc3 in position 4: ordinal not in range(128)
 
-
-1. Immutable
-2. support slicing
-3. can contain mutable object
+Total methods- 45
 
 ['__add__', '__class__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__',
  '__getnewargs__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mod__', '__mul__', '__ne__', 
@@ -57,15 +60,10 @@ b = bytes('pyth\xf6n', encoding='utf-8')
 
 sr1 = '' # empty string
 sr2 = str() # empty string
-
 sr3 = 'i'# single element string
-
 sr4 = 'kapil'
-
 sr5 = " a + 2 * 3.14"
 
-
-input("wait to press enter!")
 
 l1 = '0123456789'
 l2 = 'kapil'
