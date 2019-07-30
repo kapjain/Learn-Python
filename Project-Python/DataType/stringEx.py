@@ -151,23 +151,23 @@ s = "hello all this is the python language of the world"
 print(s.count('h')) # 5
 print(s.count('the')) #2
 print(s.count('th'))  #4
+print('xxxxx'.count('xx'))  # 2
 print("xyyzxyzxzxyy".count('xyy', 0, 100)) #2 No error if the end value is greater than the length of the string itself.
 print("xyyzxyzxzxyy".count('xyy', 0, 12)) # 2
 
 
 
-#startswith(prefix, start, end): This method check whether the string start with given substring. return true if it is there else false
+# startswith(prefix, start, end): This method check whether the string start with given substring. return true if it is there else false
 s = "this is string example....wow!!!"
 print (s.startswith( 'this' )) #True
 print (s.startswith( 'string', 8 ))#True
 print (s.startswith( 'this', 2, 4 ))#False
 
 s = "hello all this is the python language of the world"
-print(s.endswith(('hello','world'))) # True prefix can also be a tuple of strings to try.
+print(s.startswith(('hello','world')))  # True prefix can also be a tuple of strings to try.
 
 
-
-#The startswith(prefix, start, end): This method check whether the string start with given substring. return true if it is there else false      
+#The endswith(suffix, start, end): This method check whether the string end with given substring. return true if it is there else false      
 suffix='!!'
 print (s.endswith(suffix))#True
 print (s.endswith(suffix,20))#True
@@ -176,54 +176,48 @@ print (s.endswith(suffix))#False
 print (s.endswith(suffix, 0, 19))#True
       
 s = "hello all this is the python language of the world"
-print(s.endswith(('the','world'))) #True suffix can also be a tuple of strings to try.
+print(s.endswith(('the','world')))  # True suffix can also be a tuple of strings to try.
 
 
 
+# index(sub, start=0, end=len(string)): Return the lowest index in S where substring sub is found, such that sub is contained within S[start:end].
+                          # Optional arguments start and end are interpreted as in slice notation. Raises ValueError when the substring is not found.
 
-#The index() method determines if the string str occurs in string or in a substring of string, if the starting index beg and ending index end are given.
-# This method is same as find(), but raises an exception if sub is not found.
+# rindex(sub, start=0, end=len(string)): Return the highest index in S where substring sub is found, such that sub is contained within S[start:end].  
+                          # Optional arguments start and end are interpreted as in slice notation. Raises ValueError when the substring is not found.
 
-#The rindex() method returns the last index where the substring str is found, or raises an exception if no such index exists, optionally restricting
-# the search to string[beg:end].
-
-#str.rindex(str, beg = 0 end = len(string))
-
-#str.index(str, beg = 0 end = len(string))
-
-str1 = "this is string example....wow!!!"
+str1 = "this is really a string example....wow this is great!!!"
 str2 = "exam";
 
-print (str1.index(str2)) #15
-print (str1.index(str2, 10)) #15
+print (str1.index(str2)) # 24
+print (str1.index(str2, 10)) # 24
 print (str1.index(str2, 40)) # ValueError: substring not found
 
-str1 = "this is really a string example....wow!!!"
+str1 = "this is really a string example....wow this is great!!!"
 str2 = "is"
 
-print (str1.rindex(str2)) # 5
-print (str1.rindex(str2,10)) # ValueError: substring not found
+print (str1.rindex(str2)) # 44
+print (str1.rindex(str2,50)) # ValueError: substring not found
 
 
 
-#The find() method determines if the string str occurs in string, or in a substring of string if the starting index beg and ending index end are given.
+# find(sub, start=0, end=len(string)) : Return the lowest index in S where substring sub is found, such that sub is contained within S[start:end].  Optional arguments start and end are interpreted as in slice notation.
+# Return -1 on failure.
 
-#The rfind() method returns the last index where the substring str is found, or -1 if no such index exists, optionally restricting the search to string[beg:end].
-#str.rfind(str, beg = 0 end = len(string))
-#str.find(str, beg = 0 end = len(string))
+# rfind(sub, start=0, end=len(string)): Return the highest index in S where substring sub is found, such that sub is contained within S[start:end].  Optional arguments start and end are interpreted as in slice notation. 
+# Return -1 on failure.
 
-
-str1 = "this is really a string example....wow!!!"
+str1 = "this is really a string example....wow this is great!!!"
 str2 = "is"
 
-print (str1.rfind(str2)) # 5
+print (str1.rfind(str2)) # 44
 
-print (str1.rfind(str2, 0, 10)) # 5
-print (str1.rfind(str2, 10, 0)) # -1
+print (str1.rfind(str2, 0, 50)) # 44
+print (str1.rfind(str2, 10, 20)) # -1
 
 print (str1.find(str2)) # 2
 print (str1.find(str2, 0, 10)) # 2
-print (str1.find(str2, 10, 0)) # -1
+print (str1.rfind(str2, 10, 20)) # -1
 
 
 
