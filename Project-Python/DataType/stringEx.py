@@ -131,7 +131,7 @@ print('aaa'.center(11,'*'))  # '****aaa****'
 
       
 
-#zfill(width) The zfill() method pads string on the left with zeros to fill width.
+# zfill(width): The zfill() method pads string on the left with zeros to fill width.
 s = 'kapil'
 print(s.zfill(20)) # '000000000000000kapil'
 
@@ -146,7 +146,7 @@ print (s.rjust(50, '*')) #******************this is string example....wow!!!
 
 
 
-#count(sub,start = 0,end = len(string)) The count() method returns the number of occurrences of substring sub in the range [start, end]. Optional arguments start and end are interpreted as in slice notation.
+# count(sub,start = 0,end = len(string)): The count() method returns the number of occurrences of substring sub in the range [start, end]. Optional arguments start and end are interpreted as in slice notation.
 s = "hello all this is the python language of the world"
 print(s.count('h')) # 5
 print(s.count('the')) #2
@@ -221,7 +221,7 @@ print (str1.rfind(str2, 10, 20)) # -1
 
 
 
-#str.join(sequence): The join() method returns a string in which the string elements of sequence have been joined by str separator.
+# join(sequence): The join() method returns a string in which the string elements of sequence have been joined by str separator.
 s = "-"
 seq = ("a", "b", "c") # This is sequence of strings.
 print (s.join( seq )) #a-b-c
@@ -232,13 +232,13 @@ s = ','
 
 
 
-#str.strip([chars]): The strip() method returns a copy of the string in which all chars have been stripped from the beginning and the end of the string 
+# strip(chars): The strip() method returns a copy of the string in which all chars have been stripped from the beginning and the end of the string 
 #(default whitespace characters \t \n also).
 
-#str.lstrip([chars]): The lstrip() method returns a copy of the string in which all chars have been stripped from the beginning of the string 
+# lstrip([chars]): The lstrip() method returns a copy of the string in which all chars have been stripped from the beginning of the string 
 
 
-#str.rstrip([chars]): The rstrip() method returns a copy of the string in which all chars have been stripped from the end of the string 
+# rstrip([chars]): The rstrip() method returns a copy of the string in which all chars have been stripped from the end of the string 
 
 
 s = "*****this is sing example....wow!!!*****"
@@ -266,19 +266,24 @@ s = 'hi this is python. It is very good languange'
 print(s.replace('is','are',2)) #hi thare are python. It is very good languange
 print(s.replace('is','are')) # hi thare are python. It are very good languange
 
+# note: it replace value from left to right
+s = 'Hi this is hi is this kapil this is'
+print(s.replace('is','si',2))  # 'Hi thsi si hi is this kapil this is'
 
 
 
-# str.split(sep="", maxsplit = string.count(str)): The split() method returns a list of all the words in the string, using str as the separator
+# split(sep="", maxsplit = string.count(str)): The split() method returns a list of all the words in the string, using str as the separator
 # (splits on all whitespace if left unspecified), optionally limiting the number of splits to num.
 
-# str. rsplit([sep=''[, maxsplit]]): Returns a list of the words in the string, separated by the delimiter string (starting from right). 
+# rsplit(sep='', maxsplit): Returns a list of the words in the string, separated by the delimiter string (starting from right). 
 #maxsplit: Optional. Number of splits to do; default is -1 which splits all the items.
 
 print(' a b c '.split()) #['a', 'b', 'c']
 print(' a b c '.split(None, 1)) #[' a ', 'bc']
 print(' a b c '.split(None, 2)) #[' a', 'b', 'c']
 
+s = 'Hi this is      hi     is this kapil \nthis \n\nis'
+print(s.split())  # ['Hi', 'this', 'is', 'hi', 'is', 'this', 'kapil', 'this', 'is']
 
 print(' a b c '.rsplit()) #['a', 'b', 'c']
 print(' a b c '.rsplit(None, 1)) #[' a b', 'c']
@@ -286,13 +291,18 @@ print(' a b c '.rsplit(None, 2)) #[' a', 'b', 'c']
 
 
 
-#str.splitlines( num = string.count('\n')): The splitlines() method returns a list with all the lines in string, optionally including the line breaks (if num is supplied and is true).
+# splitlines( num = string.count('\n')): The splitlines() method returns a list with all the lines in string, optionally including the line breaks (if num is supplied and is true).
 #num − This is any number, if present then it would be assumed that line breaks need to be included in the lines.
 
 s = "this is \nstring example....\nwow!!!"
 print (s.splitlines( )) #['this is ', 'string example....', 'wow!!!']
 
+s = 'Hi this is      hi     is this kapil \nthis \n\n is'
+print(s.splitlines())  # ['Hi this is      hi     is this kapil ', 'this ', '', ' is']
+s = '\n\n'
+print(s.splitlines()) # ['', '']
 
+      
 
 s1 = '12345'
 s2 = 'abcd'
@@ -318,7 +328,7 @@ print(s5.islower()) #True
 print(s4.isupper()) #False
 print(s6.isupper()) #True
 
-#isspace(): return true if all the caracter are white space
+#isspace(): return true if all the character are white space
 print(s4.isspace()) #False
 print(s7.isspace()) #True
 
