@@ -4,11 +4,12 @@ Inheritance: Inheritance enable us to define a class that takes all the function
 Method Resolution Order (MRO) : It's the order in which method should be inherited in the presence of multiple inheritance. You can view the MRO by using
                                  __mro__ attribute.
 
-print( Third.__mro__ ) or print(help(Third))
+print(Fourth.__mro__) or print(help(Fourth))
 (
+<class '__main__.Fourth'>, 
 <class '__main__.Third'>, 
-<class '__main__.First'>, 
 <class '__main__.Second'>, 
+<class '__main__.First'>, 
 <class '__main__.Zeroth'>, 
 <class '__main__.Number'>, 
 <class 'object'>
@@ -23,6 +24,7 @@ Here is how MRO is calculated in Python:
 """
 
 print("************************************Importent to understand MRO*************************************")
+## Example of Hybrid Inheritance
 class Number(object):
     def __init__(self):
         pass
@@ -31,7 +33,7 @@ class Number(object):
         print("Number")
 
 
-class Zeroth(Number):
+class Zeroth(Number): # Single Inheritance   Number->Zeroth
     def __init__(self):
         pass
 
@@ -39,7 +41,7 @@ class Zeroth(Number):
         print("Zeroth")
 
 
-class First(Zeroth):
+class First(Zeroth): # Multilevel Inheritance   Number->Zeroth->First
     def __init__(self):
         pass
 
@@ -47,7 +49,7 @@ class First(Zeroth):
         print("First")
 
 
-class Second(Zeroth):
+class Second(First): # Heirarchical Inheritance   First -> Second, Third
     def __init__(self):
         pass
 
@@ -55,35 +57,36 @@ class Second(Zeroth):
         print("second")
 
 
-class Third(First, Second):
+class Third(First):
     def __init__(self):
         pass
 
+    def add(self):
+        print("Third")
 
-o = Third();
 
-print( Third.__mro__ )
+class Fourth(Third, Second, ): # Multiple Inheritance   Third,Second->Fourth
+    def __init__(self):
+        pass
+
+    def add(self):
+        print("Fourth")
+
+
+obj = Fourth();
+obj.add()  # Fourth
+print(Fourth.__mro__)
 """
 (
-<class '__main__.Third'>,
-<class '__main__.First'>, 
+<class '__main__.Fourth'>, 
+<class '__main__.Third'>, 
 <class '__main__.Second'>, 
+<class '__main__.First'>, 
 <class '__main__.Zeroth'>, 
-<class '__main__.Number'>
+<class '__main__.Number'>, 
 <class 'object'>
- )
+)
 """
-
-o.add()  # First
-
-print(isinstance(o,Number))  # True
-print(isinstance(o,Zeroth))  # True
-print(isinstance(o,First))  # True
-print(isinstance(o,Second))  # True
-print(isinstance(o,Third))  # True
-
-
-
 
 
 print("************************************Example 1*************************************")
@@ -120,7 +123,7 @@ p.myMethod()
 #print(p.a) 
 
 
-print("************************************very good example of inheritance *************************************")
+print("************************************very good example of class with inheritance *************************************")
 class Employee:
     
     raise_amt = 1.05
