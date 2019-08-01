@@ -4,24 +4,34 @@ Inheritance: Inheritance enable us to define a class that takes all the function
 Method Resolution Order (MRO) : It's the order in which method should be inherited in the presence of multiple inheritance. You can view the MRO by using
                                  __mro__ attribute.
 
-print( Dog.__mro__ ) or print(help(Dog))
-(<class 'Dog'>, 
-<class 'NonMarineMammal'>, 
-<class 'NonWingedMammal'>, 
-<class 'Mammal'>, 
-<class 'Animal'>, 
-<class 'object'>)
+print( Third.__mro__ ) or print(help(Third))
+(
+<class '__main__.Third'>, 
+<class '__main__.First'>, 
+<class '__main__.Second'>, 
+<class '__main__.Zeroth'>, 
+<class '__main__.Number'>, 
+<class 'object'>
+)
 
 Here is how MRO is calculated in Python:  
-    1. A method in the derived calls is always called before the method of the base class. In our example, Dog class is called before NonMarineMammal or 
-    NoneWingedMammal. These two classes are called before Mammal which is called before Animal, and Animal class is called before object.
-    2. If there are multiple parents like Dog(NonMarineMammal, NonWingedMammal), method of NonMarineMammal is invoked first because it appears first.
+    1. A method in the derived calls is always called before the method of the base class. 
+    In our example, Third class is called before First or Second. These two classes are called before Zeroth which is called before Number, and Number class is called before object.
+    2. the class which is appear first, method will get called for that class only in case of same method.
+    If there are multiple parents like Third(First, Second), method of First class is invoked first because it appears first.
 
 """
 
 print("************************************Importent to understand MRO*************************************")
+class Number(object):
+    def __init__(self):
+        pass
 
-class Zeroth(object):
+    def add(self):
+        print("Number")
+
+
+class Zeroth(Number):
     def __init__(self):
         pass
 
@@ -59,12 +69,14 @@ print( Third.__mro__ )
 <class '__main__.First'>, 
 <class '__main__.Second'>, 
 <class '__main__.Zeroth'>, 
+<class '__main__.Number'>
 <class 'object'>
  )
 """
 
 o.add()  # First
 
+print(isinstance(o,Number))  # True
 print(isinstance(o,Zeroth))  # True
 print(isinstance(o,First))  # True
 print(isinstance(o,Second))  # True
@@ -73,35 +85,20 @@ print(isinstance(o,Third))  # True
 
 
 
+
 print("************************************Example 1*************************************")
 #class DerivedClassName(modname.BaseClassName):
 class Parent:# define parent class
-    parentAttr = 100
-    def __init__(self):
-        print ("Calling parent constructor")
-
     def parentMethod(self):
         print ('Calling parent method')
-    def setAttr(self, attr):
-        Parent.parentAttr = attr
-    def getAttr(self):
-        print ("Parent attribute :", Parent.parentAttr)
-
 
 class Child(Parent):# define child class
-    def __init__(self):
-        print ("Calling child constructor")
-        
     def childMethod(self):
         print ('Calling child method')
 
 c = Child()          # instance of child
 c.childMethod()      # child calls its method
 c.parentMethod()     # calls parent's method There is a simple way to call the base class method directly: just call BaseClassName.methodname(self, arguments). This is occasionally useful to clients as well. (Note that this only works if the base class is accessible as BaseClassName in the global scope.)
-c.setAttr(200)       # again call parent's method
-c.getAttr()          # again call parent's method
-
-
 
 
 print("************************************Example 2*************************************")
@@ -117,38 +114,10 @@ class Child1(Parent1):
 
 c = Child1()          # instance of child
 c.myMethod()  #Calling child method
-p = Parent1() # if attribute are same in both the class, then we need to call attribute from that class object itself
+p = Parent1() # if there are same attribute in both parent and child class, if we want to call parent class method then we need to create object of parent class
 p.myMethod()
-#print(p.a) object of parent class can not access attribute of child class
-
-
-
-print("************************************Example 3*************************************")
-print("example of multiple inheritance")
-
-class First(object):
-    def __init__(self):
-        pass
-    def add(self):
-        print("First")
-class Second(object):
-    def __init__(self):
-        pass
-    def add(self):
-        print("second")
-class Third(Second,First):
-    def __init__(self):
-        pass
-
-o = Third(); # left-to-right ordering
-o.add() # the class which is appear first, method will call for that class only in case of same method in multiple inheritance
-
-print(isinstance(o,First)) # True
-print(isinstance(o,Second)) # True
-print(isinstance(o,Third)) # True
-
-
-
+# Note: object of parent class can not access attribute of child class
+#print(p.a) 
 
 
 print("************************************very good example of inheritance *************************************")
