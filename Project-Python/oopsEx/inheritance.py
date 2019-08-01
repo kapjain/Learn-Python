@@ -19,6 +19,59 @@ Here is how MRO is calculated in Python:
 
 """
 
+print("************************************Importent to understand MRO*************************************")
+
+class Zeroth(object):
+    def __init__(self):
+        pass
+
+    def add(self):
+        print("Zeroth")
+
+
+class First(Zeroth):
+    def __init__(self):
+        pass
+
+    def add(self):
+        print("First")
+
+
+class Second(Zeroth):
+    def __init__(self):
+        pass
+
+    def add(self):
+        print("second")
+
+
+class Third(First, Second):
+    def __init__(self):
+        pass
+
+
+o = Third();
+
+print( Third.__mro__ )
+"""
+(
+<class '__main__.Third'>,
+<class '__main__.First'>, 
+<class '__main__.Second'>, 
+<class '__main__.Zeroth'>, 
+<class 'object'>
+ )
+"""
+
+o.add()  # First
+
+print(isinstance(o,Zeroth))  # True
+print(isinstance(o,First))  # True
+print(isinstance(o,Second))  # True
+print(isinstance(o,Third))  # True
+
+
+
 
 print("************************************Example 1*************************************")
 #class DerivedClassName(modname.BaseClassName):
@@ -90,7 +143,9 @@ class Third(Second,First):
 o = Third(); # left-to-right ordering
 o.add() # the class which is appear first, method will call for that class only in case of same method in multiple inheritance
 
-print(isinstance(o,First))
+print(isinstance(o,First)) # True
+print(isinstance(o,Second)) # True
+print(isinstance(o,Third)) # True
 
 
 
