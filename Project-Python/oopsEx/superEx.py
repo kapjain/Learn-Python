@@ -1,9 +1,244 @@
 """
 The super() builtin returns a proxy object that allows you to refer parent class by 'super'.
+Python 2: super(SubClass, self).__init__()
+Python 3: super().__init__()
 
 In Python, super() built-in has two major use cases:
 1. Allows us to avoid using base class explicitly
 2. Working with Multiple Inheritance
+"""
+
+# Example 1
+## Initialized Parent class when creating object of child class
+class Computer():
+    def __init__(self, computer, ram, ssd):
+        self.computer = computer
+        self.ram = ram
+        self.ssd = ssd
+
+class Laptop(Computer):
+    def __init__(self, computer, ram, ssd, model):
+        super().__init__(computer, ram, ssd)
+        self.model = model
+
+lenovo = Laptop('lenovo', 2, 512, 'l420')
+print('This computer is:', lenovo.computer)
+print('This computer has ram of', lenovo.ram)
+print('This computer has ssd of', lenovo.ssd)
+print('This computer has this model:', lenovo.model)
+
+
+# Example 2
+## Python super() will always refer the immediate superclass.
+# Python super() function not only can refer the __init()__ function but also can call all other function of the superclass.
+class A:
+    def __init__(self):
+        print('Initializing: class A')
+
+    def sub_method(self, b):
+        print('Printing from class A:', b)
+
+
+class B(A):
+    def __init__(self):
+        print('Initializing: class B')
+        super().__init__()
+
+    def sub_method(self, b):
+        print('Printing from class B:', b)
+        super().sub_method(b + 1)
+
+
+class C(B):
+    def __init__(self):
+        print('Initializing: class C')
+        super().__init__()
+
+    def sub_method(self, b):
+        print('Printing from class C:', b)
+        super().sub_method(b + 1)
+
+c = C()
+c.sub_method(1)
+"""
+Initializing: class C
+Initializing: class B
+Initializing: class A
+Printing from class C: 1
+Printing from class B: 2
+Printing from class A: 3
+"""
+
+
+# Example 3
+## Super() method also follow MRO (Herachical Inheritance)
+# Condition: all parent class method shuold have super.method_name, else it will call only one method
+
+class A:
+    def __init__(self):
+        print('Initializing: class A')
+
+    def sub_method(self, b):
+        print('Printing from class A:', b)
+
+
+class B:
+    def __init__(self):
+        print('Initializing: class B')
+
+    def sub_method(self, b):
+        print('Printing from class B:', b)
+
+
+class C(A,B):
+    def __init__(self):
+        print('Initializing: class C')
+        super().__init__()
+
+    def sub_method(self, b):
+        print('Printing from class C:', b)
+        super().sub_method(b + 1)
+
+
+c = C()
+c.sub_method(1)
+print(C.__mro__)
+"""
+Initializing: class C
+Initializing: class A
+Printing from class C: 1
+Printing from class A: 2
+(
+<class '__main__.C'>, 
+<class '__main__.A'>, 
+<class '__main__.B'>, 
+<class 'object'>
+)
+"""
+
+# Example 4
+##  When there is no grand parent, it call whichever class appear first then next and so on..
+# all parent class method shuold have super.method_name, else it will call only one method
+class Second():
+    def __init__(self):
+        print("second")
+        super().__init__()
+
+
+class Third():
+    def __init__(self):
+        print("Third")
+        super().__init__()
+
+
+class Fourth(Third, Second, ):
+    def __init__(self):
+        print("Fourth")
+        super().__init__()
+
+
+obj = Fourth();
+print(Fourth.__mro__)
+"""
+Fourth
+Third
+second
+(
+<class '__main__.Fourth'>, 
+<class '__main__.Third'>, 
+<class '__main__.Second'>, 
+<class 'object'>
+)
+"""
+
+# Example 5
+## When there are grand parent, then it call whichever class appear first and complate its familiy then go to next class and so on..
+class Zeroth():
+    def __init__(self):
+        print("Zeroth")
+        super().__init__()
+
+
+class First():
+    def __init__(self):
+        print("First")
+        super().__init__()
+
+
+class Second(Zeroth):
+    def __init__(self):
+        print("second")
+        super().__init__()
+
+
+class Third(First):
+    def __init__(self):
+        print("Third")
+        super().__init__()
+
+
+class Fourth(Third, Second, ):
+    def __init__(self):
+        print("Fourth")
+        super().__init__()
+
+
+obj = Fourth();
+print(Fourth.__mro__)
+"""
+(
+<class '__main__.Fourth'>, 
+<class '__main__.Third'>, 
+<class '__main__.First'>, 
+<class '__main__.Second'>, 
+<class '__main__.Zeroth'>, 
+<class 'object'>
+)
+Fourth
+Third
+First
+second
+Zeroth
+"""
+
+# Example 6
+## When there is same grand parent for all parent class, then it cover all sibling first then go to grand parent class.
+class First():
+    def __init__(self):
+        print("First")
+        super().__init__()
+
+
+class Second(First):
+    def __init__(self):
+        print("second")
+        super().__init__()
+
+
+class Third(First):
+    def __init__(self):
+        print("Third")
+        super().__init__()
+
+
+class Fourth(Third, Second, ):
+    def __init__(self):
+        print("Fourth")
+        super().__init__()
+
+
+obj = Fourth();
+print(Fourth.__mro__)
+"""
+Fourth
+Third
+second
+First
+(<class '__main__.Fourth'>, 
+<class '__main__.Third'>, 
+<class '__main__.Second'>, 
+<class '__main__.First'>, 
+<class 'object'>)
 """
 
 
