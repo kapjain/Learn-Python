@@ -1,6 +1,12 @@
 """
 Inheritance: Inheritance enable us to define a class that takes all the functionality from parent class and allows us to add more
 
+1. Single Inheritance
+2. Heirarchical Inheritance
+3. Multiple Inheritance
+4. Multilevel Inheritance
+5. Hybrid Inheritance: The inheritance in which the derivation of a class involves more than one form of any inheritance is 
+                       called hybrid inheritance.  
 Method Resolution Order (MRO) : It's the order in which method should be inherited in the presence of multiple inheritance. You can view the MRO by using
                                  __mro__ attribute.
 
