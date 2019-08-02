@@ -107,6 +107,9 @@ print(l[-1:-7:-1])  # [9, 8, 7, 6, 5, 4]
 print(l[-7:-1:-1])  # [] -->
 
 
+# Asignment
+a = []
+a[0]=10 # IndexError: list assignment index out of range
 
 # updating value in the list
 l3[0] = 10
