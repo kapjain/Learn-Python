@@ -1,23 +1,34 @@
+"""
+Must to know:
+1. Division operator in Python:
+Python 2.7: The / (division) and // (floor division) operators yield the quotient of their arguments. The numeric arguments are first converted to a common type. Plain or long integer division yields an integer of the same type; the result is that of mathematical division with the ‘floor’ function applied to the result. Division by zero raises the ZeroDivisionError exception.
+print(3/2) # 1
+print(3//2) # 1
+
+When devident or divisor is float then result will be in float only.
+print(3.0/2) # 1.5
+print(3/2.0) # 1.5
+print(3.0/2.0) # 1.5
+
+Python 3.5: The / (division) and // (floor division) operators yield the quotient of their arguments. The numeric arguments are first converted to a common type. Division of integers yields a float, while floor division of integers results in an integer; the result is that of mathematical division with the ‘floor’ function applied to the result. Division by zero raises the ZeroDivisionError exception.
+print(3/2) # 1.5
+print(3//2) # 1
+
+When devident or divisor is float then result will be in float only.
+print(3/2.0) # 1.5
+print(3//2.0) # 1.0
+"""
+
+
 input("press enter to exit")
 
-a = 21
-b = 10
-c = 0
+a,b,c = 21,10,0 # ( This is called tuple unpacking)
 
-c = a + b#31
-print ("Line 1 - Value of c is ", c)
-
-c = a - b#11
-print ("Line 2 - Value of c is ", c)
-
-c = a * b#210
-print ("Line 3 - Value of c is ", c) 
-
-c = a / b#2.1
-print ("Line 4 - Value of c is ", c) 
-
-c = a % b#1
-print ("Line 5 - Value of c is ", c)
+print("Line 1 - Value of c is ", a + b) # 31
+print ("Line 2 - Value of c is ", a - b) # 11
+print ("Line 3 - Value of c is ", a * b) # 210
+print ("Line 4 - Value of c is ", a / b) # 2.1
+print ("Line 5 - Value of c is ", a % b) # 1
 
 a = 2
 b = 3
