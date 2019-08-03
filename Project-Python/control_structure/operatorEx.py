@@ -90,14 +90,22 @@ print ("Line 3 - Value of c is ", c)
 c = ~a;           # -61 = 1100 0011
 print ("Line 4 - Value of c is ", c)
 
+# left shift operator shift the bits towards left
 c = a << 2;       # 240 = 1111 0000
 print ("Line 5 - Value of c is ", c)
 
+# Right shift operator shift the bits towards right
 c = a >> 2;       # 15 = 0000 1111
 print ("Line 6 - Value of c is ", c)
 
-# +5 is in 6th place, so should get the value of 6th place in negative side
-# -6, -5, -4, -3, -2, -1, middle 0, 1, 2, 3, 4, 5
+"""
+The unary ~ (invert) operator yields the bitwise inversion of its integer argument. The bitwise inversion of x is defined as -(x+1). 
+It only applies to integral numbers.
+https://docs.python.org/3/reference/expressions.html#unary-arithmetic-and-bitwise-operations
+~x = -x-1
+"""
+# 
+
 a,b = 5,-4
 print(~a)#-6
 print(~b)# 3
@@ -140,7 +148,7 @@ print(False or a)#2
 
 
     
-#Python’s membership operators test for membership in a sequence, such as strings, lists, or tuples.
+#Pythonâ€™s membership operators test for membership in a sequence, such as strings, lists, or tuples.
 a = 1
 b = 5
 c = [1,2,3]
