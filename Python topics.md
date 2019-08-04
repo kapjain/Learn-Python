@@ -11,7 +11,7 @@
 - PIP
 - PEP8 (flake8)
 - Identifiers
-- Keywords(Reserve words)
+- Keywords(Reserve words) 35 keywords in python 3 and 31 in python 2
 - Indentation
 - comments
 - multiline statements
@@ -39,21 +39,22 @@
 
 
 3. Standard Data Types and Data Type Conversion
-- String (all the method of string and all the string related operators and operations)
-- bytes
-- bytearray
-- List
-- Tuple
-- Dictionary
-- set
-- frozenset
 - None
-- range
-- Numbers (complex, float, int, long)
-- boolean
+- Numeric Types — int, bool, float, complex
+- Sequence Types — list(11 methods), tuple(2 methods), range
+- Text Sequence Type — str(45 methods)
+- Binary Sequence Types — bytes, bytearray
+- Set Types — set, frozenset
+- Mapping Types — dict (11 methods)
 - Type Conversion
-- comprehensions(list, set, dictionary)
+- comprehensions(list, set, dictionary) and generator expression
 - collections (orderDict)
+
+Immutable sequences: string, tuple, bytes
+Mutable sequences: list, bytearray
+
+Immutable set: set
+Mutable set: frozenset
 
 
 4. Decesion making and Loops
