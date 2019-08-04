@@ -1,0 +1,59 @@
+Problem without setting PYTHONPATH:
+1. Create two files under Contents directory
+	Contents/code/a_module.py
+	def func():
+		print("Running useful function")
+
+	Contents/scripts/a_script.py
+	import a_module
+	a_module.func()
+
+2. Before we set PYTHONPATH correctly:
+	$ python3 scripts/a_script.py
+	Traceback (most recent call last):
+	  File "scripts/a_script.py", line 1, in <module>
+		import a_module
+	ModuleNotFoundError: No module named 'a_module'
+
+3. After we set PYTHONPATH correctly:
+	$ # Set PYTHONPATH to path to the working directory + /code
+	$ # This is for the "bash" shell on Unix / git bash on Windows
+	$ export PYTHONPATH="$PWD/code"
+	$ # Now the script can find "a_module"
+	$ python3 scripts/a_script.py
+	Running useful function
+
+
+Solution of this Problem:
+Windows:
+allows environment variables to be configured permanently at both the User level and the System level, or temporarily in a command prompt.
+1. To temporarily set environment variables, open Command Prompt and use the set command:
+	From Windows command line:
+	C:\>set PATH=C:\Program Files\Python 3.7;%PATH%
+	C:\>set PYTHONPATH=%PYTHONPATH%;C:\Users\kapil_jain\PycharmProjects\SeleniumWithPython(Path to your project directory)
+	C:\>echo %PYTHONPATH%
+	'C:\Users\kapil_jain\PycharmProjects\SeleniumWithPython'
+
+2. Permanently:
+	1. Go to My Computer > Properties > Advanced System Settings > Environment Variables > System Variables:
+	add PY_HOME
+	add/edit PYTHONPATH=C:\Users\kapil_jain\PycharmProjects\SeleniumWithPython
+
+
+
+Linux:
+1. Temporary:
+	open terminal and run the below command
+	export PYTHONPATH=$PYTHONPATH:/home/dev/python-files
+	echo $PYTHONPATH
+
+2. Permanently:
+	1. Open your favorite terminal program;
+	2. Open the file ~/.bashrc in your text editor – e.g. atom ~/.bashrc;
+	3. Add the following line to the end:
+		export PYTHONPATH=/home/my_user/code or
+		export PYTHONPATH=$PYTHONPATH:/home/dev/python-files
+	4. Save the file.
+	5. Close your terminal application;
+	6. Start your terminal application again, to read in the new settings, and type this:
+	7. echo $PYTHONPATH
