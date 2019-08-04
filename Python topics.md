@@ -79,7 +79,7 @@
 - yield statement
 - scope of a variable(local, nonlocal, global)
 - Recursion
-- all built in functions(map, reduce, filter, zip)
+- all built in functions(map, reduce, filter, zip etc total 69)
  
 6. Packages and module
 - Creating Python Packages and modules
