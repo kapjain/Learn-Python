@@ -1,6 +1,36 @@
 """
 Must to know:
-1. Division operator in Python:
+1. Operator precedence and their associativity: 
+Operators in the same box group execute left to right (except for exponentiation, which groups from right to left).
+
+(expressions...), [expressions...], : Binding or tuple display, list display, dictionary display, set display
+{key: value...}, {expressions...} 
+x[index], x[index:index],           : Subscription, slicing, call, attribute reference
+x(arguments...), x.attribute 
+await x                             : Await expression
+**                                  : Exponentiation 
++x, -x, ~x                          : Positive, negative, bitwise NOT
+*, @, /, //, %                      : Multiplication, matrix multiplication, division, floor division, remainder
++, -                                : Addition and subtraction
+<<, >>                              : Shifts
+&                                   : Bitwise AND
+^                                   : Bitwise XOR
+|                                   : Bitwise OR
+in, not in, is, is not, <,          : Comparisons, including membership tests and identity tests
+<=, >, >=, !=, == 
+not x                               : Boolean NOT
+and                                 : Boolean AND
+or                                  : Boolean OR
+if – else                           : Conditional expression
+lambda                              : Lambda expression
+
+Note: a. x < y < z neither means (x < y) < z nor x < (y < z). x < y < z is equivalent to x < y and y < z, and is evaluates 
+from left-to-right.
+b. Python evaluates expressions from left to right. Notice that while evaluating an assignment, the right-hand side is evaluated
+before the left-hand side.
++=, -=, *=, /+, //+, %= **=
+
+2. Division operator in Python:
 Python 2.7: The / (division) and // (floor division) operators yield the quotient of their arguments. The numeric arguments are 
             first converted to a common type. Plain or long integer division yields an integer of the same type; the result is that
             of mathematical division with the ‘floor’ function applied to the result. Division by zero raises the ZeroDivisionError 
@@ -24,11 +54,13 @@ When devident or divisor is float then result will be in float only.
 print(3/2.0) # 1.5
 print(3//2.0) # 1.0
 
-2. Not equal operator:
+
+3. Not equal operator:
 print( 2 <> 3 ) # True
 print( 2 <> 3 ) # SyntaxError: invalid syntax in python 3.7
 
-3. Shift Operator:
+
+4. Shift Operator:
  Left shift(<<) operator shift the bits towards left.
  Right shift(>>) operator shift the bits towards right.
  print(10<<2) # 40
@@ -36,14 +68,16 @@ print( 2 <> 3 ) # SyntaxError: invalid syntax in python 3.7
         b. append or prepend the zero's in binary number (00101000)
         c. convert new number into decimal(00101000 - 40)
 
-4. Unary ~ operator:
+
+5. Unary ~ operator:
 The unary ~ (invert) operator yields the bitwise inversion of its integer argument. The bitwise inversion of x is defined as -(x+1). 
 It only applies to integral numbers. (https://docs.python.org/3/reference/expressions.html#unary-arithmetic-and-bitwise-operations)
 ~x = -x-1
 print(~5) #-6
 print(~(-4)) # 3
 
-5. 'and' operator:
+
+6. 'and' operator:
 a. if the both the operands are non-zero, non empty list or(tuple, set, dictionary,string, frozenset, bytes , butearray) Then result
 will be the value of second operand.
 print([1,2,3] and (1,2,3,4)) # (1,2,3,4)
@@ -58,7 +92,7 @@ the value of second operand.
 print((1,2,3,4) and []) # []
 
 
-6. 'or' operator:
+7. 'or' operator:
 a. if the first or both the operands are non-zero, non empty list or(tuple, set, dictionary,string, frozenset, bytes , butearray) Then result
 will be the value of first operand.
 print((1,2,3,4) or []) # (1,2,3,4)
