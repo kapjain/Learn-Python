@@ -9,9 +9,18 @@ variable_name = function_name(argument_values)
 """
 
 ## Function Without argument
+# function which return the value
 def hello_world():
     return "Hello World"
 
+output = hello_world()
+print(output) # Hello World
+
+# function which does not return any value
+def print_name():
+    print("Hello Kapil")
+
+print_name()
 
 # Required/Positional Arguments
 # you need to pass all the argument which has given in the function defination_
