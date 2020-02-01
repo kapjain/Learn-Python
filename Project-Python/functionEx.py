@@ -1,4 +1,19 @@
-#Required Positional Arguments
+"""
+## Function defination:
+def function_name (argument1, argument2..):
+    statments
+    return (statement)
+    
+## Function Calling
+variable_name = function_name(argument_values)
+"""
+
+## Function Without argument
+def hello_world():
+    return "Hello World"
+
+
+# Required/Positional Arguments
 # you need to pass all the argument which has given in the function defination_
 def printme( str1 ):
     "This prints a passed string into this function"
@@ -9,7 +24,7 @@ printme('kapil')
 
 
 
-#Keyword Arguments
+# Keyword Arguments
 
 # Function definition is here
 def printinfo( name, age, sex ):
@@ -27,7 +42,7 @@ printinfo(  'f', 50, sex="m" )
 
 
 
-#Default Arguments
+# Default Arguments
 
 # Function definition is here Note:non-default argument follows default argument
 def printinfo1( name, age = 35 ):
@@ -42,7 +57,7 @@ printinfo1( name = "m")
 
 
 
-#Variable-length Arguments
+# Variable-length Arguments
 
 # Function definition is here
 def printinfo2( arg1, *vartuple ):
