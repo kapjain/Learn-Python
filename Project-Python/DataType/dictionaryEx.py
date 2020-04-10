@@ -41,6 +41,9 @@ numbers = dict(x=5, y=0)
 print('numbers = ',numbers)
 print(type(numbers))
 
+# numbers = dict(2,x=5, y=0)
+# TypeError: 'int' object is not iterable
+
 empty = dict()
 print('empty = ',empty)
 print(type(empty))  # <class 'dict'>
@@ -49,12 +52,21 @@ print(type(empty))  # <class 'dict'>
 numbers1 = dict([('x', 5), ('y', -5)])
 print('numbers1 =',numbers1)  # {'x': 5, 'y': -5}
 
+# numbers1 = dict([('x', 5, 4), ('y', -5, 5)])
+# ValueError: dictionary update sequence element #0 has length 3; 2 is required
+
+# numbers1 = dict([('x', 5, 2 ,4), ('y', -5, 5, 3)])
+# ValueError: dictionary update sequence element #0 has length 4; 2 is required
+ 
 # keyword argument is also passed
 numbers2 = dict([('x', 5), ('y', -5)], z=8)
 print('numbers2 =',numbers2)  # {'x': 5, 'y': -5, 'z': 8}
 
+# numbers2 = dict(z=3,[('x', 5), ('y', -5)])
+# SyntaxError: positional argument follows keyword argument
+
 # zip() creates an iterable in Python 3
-numbers3 = dict(dict(zip(['x', 'y', 'z'], [1, 2, 3])))
+numbers3 = dict(zip(['x', 'y', 'z'], [1, 2, 3]))
 print('numbers3 =',numbers3)  # {'x': 1, 'y': 2, 'z': 3}
 
 # keyword argument is also passed
@@ -68,6 +80,8 @@ d = {'name': 'john','code':6734, 'dept': 'sales'}
 print(d['name']) #'john'
 d['name'] = 'Kapil'
 print(d['name']) # 'Kapil'
+
+print(d['name']) # KeyError: 'Name'
 
 
 # Basic operation
@@ -87,7 +101,7 @@ print(max(d1)) #'name'
 
 
 # fromkeys(iterable, value=None): The method fromkeys() creates a new dictionary with keys from seq and value set to value.
-# return: it return a dictionary with given defult value like {1: 'Null', 2: 'Null', 3: 'Null'} 
+# return: it return a dictionary with given defult value like {1: None, 2: None, 3: None} 
 d1 = {'name': 'john','code':6734, 'dept': 'sales'}
 seq = ('name', 'age', 'sex')
 
@@ -113,6 +127,7 @@ print(d.get('Sex','Not available')) #'Not available'
 
 
 # dict.setdefault(key, default = None) The method setdefault() is similar to get(), but will set dict[key] = default if key is not already in dict.
+# return: value of the key. If key is not available then returns default value.
 
 d = {'Name': 'Zara', 'Age': 7}
 print ("Value : %s" %  d.setdefault('Age', None)) # Value : 7
@@ -135,21 +150,22 @@ print(d.keys()) # dict_keys(['Name', 'Age'])
 
 print(d.values()) # dict_values(['Zara', 27])
 print(d.items()) # dict_items([('Name', 'Zara'), ('Age', 27)])
-# d.keys(f) f is not defined
 
 
 #pop (key, optional value) : key must be there
+# return : value of the key
 
 d = {'Name': 'Zara', 'Age': 27}
-# d.pop() TypeError: pop expected at least 1 arguments, got 0
-# d.pop('N') KeyError: 'N'
 print(d.pop('N','not available')) # 'not available'
-
 print(d.pop('Name')) #'Zara'
 print(d) # {'Age': 27}
 
+# d.pop() TypeError: pop expected at least 1 arguments, got 0
+# d.pop('N') KeyError: 'N'
 
-# popitem(), remove item from dictionary from the last
+
+# popitem(), remove item from dictionary
+# return : tuple
 d = {'Name': 'Zara', 'Age': 27}
 d.popitem() #('Age', 27)
 print(d) # {'Name': 'Zara'}
@@ -162,6 +178,7 @@ print(d) #{}
 
 
 # clear() it deletre all the items from the dictionary
+# return: None
 d = {'Name': 'Zara', 'Age': 27}
 d.clear()
 print(d) # {}
@@ -172,7 +189,8 @@ del d # but del delete the dictionary with all items
 
 
 
-# copy() The method copy() returns a shallow copy of the dictionary.
+# copy()
+# returns: a shallow copy of the dictionary.
 
 d = {'Name': 'Zara', 'Age': 27}
 
@@ -185,12 +203,13 @@ print(d1) # {'Name': 'Zara', 'Age': 27, 'sex': 'male'}
 
 
 
-# dict.update(dict2) The method update() adds dictionary dict2's key-values pairs in to dict. This functionEx does not return anything.
-
+# dict.update(dict2, **kwargs) The method update() adds dictionary dict2's key-values pairs in to dict. This functionEx does not return anything.
+# return: None
 d = {'Name': 'Zara', 'Age': 7}
 d2 = {'Sex': 'female','dob':1993 }
 
 d.update(d2)
+d.update([(1,2)],a=2)
 print ("updated dict : ", d)# updated dict : {'Sex': 'female', 'Age': 7, 'Name': 'Zara'}
 
 
