@@ -309,6 +309,7 @@ print(l.index(1,0,4))#0
 
 
 #reverse(), it reverse the list
+# return: None
 l = [1,2,3,4,5]
 l.reverse()
 print(l)#[5, 4, 3, 2, 1]
@@ -320,6 +321,7 @@ print(l1)#[3.4, 'kapil jain', 'dog', 'hi', 1]
 
 
 #sort() no argument. it sort the list
+# return : None
 l = [1,2,3,4,5,1]
 l.sort()
 print(l)# [1, 1, 2, 3, 4, 5]
@@ -329,6 +331,7 @@ l1 = [1,'hi', 'dog','kapil jain', 3.4]
 
 
 #copy()  Return a shallow copy of the list.
+# return: copy of list
 l = [1,2,[2,3]]
 m = l.copy()
 print(m)  # [1, 2, [2, 3]]
