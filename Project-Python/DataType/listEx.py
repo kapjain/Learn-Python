@@ -16,17 +16,21 @@ list operation are creation, accessing, modification, append, Concatenate , dele
 
 'append',  'insert', 'extend', 'pop', 'remove', 'clear', 'index', 'count', 'copy',  'reverse', 'sort'
 """
-l = [] # empty list
-l1 = list() # empty list list(sequence)
-l2 = [1,]# single element list
+# Empty List
+l = []
+l1 = list()
+
+# Single Element List
+l2 = [1,] or [1]
+
+# Multiple element list
 l3 = [1, 2, 3, 4, 5] # same type of element
 l4 = [1,'hello', "Hi jone", 3.14, [1,2,3], {1,2,3} ] # different type of element with mutable object
 
-l5 = list(range(10))
-#list([iterable]): optional. an object that could be a sequence (string, tuples) or collection (set, dictionary) or iterator object
-# empty list
-print(list()) #[]
 
+#list([iterable]): optional. an object that could be a sequence (string, tuples) or collection (set, dictionary) or iterator object
+
+# Data type Conversion into list
 # string
 l = list('aeiou')
 print(l)#['i', 'u', 'o', 'e', 'a']
@@ -153,7 +157,7 @@ print(l)#[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, [1, 2, 3], range(11, 15), None]
 l.append(2+3)
 print(l)#[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, [1, 2, 3], range(11, 15), None, 5]
 
-#l.append(a=3) TypeError: append() takes no keyword arguments
+#l.append(object=3) TypeError: append() takes no keyword arguments
 #l.append() TypeError: append() takes exactly one argument (0 given)
 #l.append(1,2) TypeError: append() takes exactly one argument (2 given)
 
@@ -185,7 +189,8 @@ l.insert(11,[1,2,3])
 print(l)#[0, 1.5, 1, 2, range(6, 8), 7, 3, 4, 5, 10, 12, [1, 2, 3]]
 
 # l.insert(2) TypeError: insert() takes exactly 2 arguments (1 given)
-#l.insert() TypeError: insert() takes exactly 2 arguments (0 given)
+# l.insert() TypeError: insert() takes exactly 2 arguments (0 given)
+# l.insert(index=0, object=1) TypeError: insert() takes no keyword arguments
 
 
 #The extend(iterable) method appends the contents of seq or itratable object to list.
@@ -221,6 +226,7 @@ print(l)#[0, 1, 2, 10, 11, 12, 13, 14, 15, 'a', 'b', 1, 2, ('a', 1), ('b', 2), 1
 # l.extend(1,2,3) TypeError: extend() takes exactly one argument (3 given)
 # l.extend() TypeError: extend() takes exactly one argument (0 given)
 # l.extend([5,6],[7,8]) TypeError: extend() takes exactly one argument (2 given)
+# l.extend(iterable="akp") TypeError: extend() takes no keyword arguments
 
 
 # pop(index = -1), index is an optional parameter
@@ -233,9 +239,10 @@ print(l)#[10, 9, 8, 7, 6, 5, 4, 3, 2]
 l.pop(3)# if the index is given, it will remove the value of given index
 print(l)#[10, 9, 8, 6, 5, 4, 3, 2]
 
-#if the given index is not present in the list it will throw error
-#l.pop(13) IndexError: pop index out of range
-#l.pop(-10)IndexError: pop index out of range
+# if the given index is not present in the list it will throw error
+# l.pop(13) IndexError: pop index out of range
+# l.pop(-10)IndexError: pop index out of range
+# l.pop(index=2) TypeError: pop() takes no keyword arguments
 
 
 # remove(object), object is mandatory parameter
@@ -252,6 +259,7 @@ l.remove(8) # If there the same value in the list, so it will remove whichaver v
 print(l)#[6, 4, 2, 8 ,3]
 
 l.remove(30) # if the given object is not present in the list. ValueError: list.remove(x): x not in list
+
 #l.remove() TypeError: remove() takes exactly one argument (0 given)
 #l.remove(10,8) TypeError: remove() takes exactly one argument (2 given)
 
@@ -279,17 +287,20 @@ del l #it delete whole list with structure
 l = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1,10]
 print(l.count(10))#2
 print(l.count(12))#0
+
 #print(l.count(10,2)) TypeError: count() takes exactly one argument (2 given)
 #print(l.count()) TypeError: count() takes exactly one argument (0 given)
+# l.count(value=2) TypeError: count() takes no keyword arguments
 
 
 # index(value, start index, end index), 
 # return the lowest index
 l = [1,2,3,4,5,1]
 print(l.index(1))#0
+print(l.index(2,0))#1
 print(l.index(2,0,4))#1
 
-#print(l.index(6))ValueError: 6 is not in list
+#print(l.index(6)) ValueError: 6 is not in list
 #print(l.index()) TypeError: index() takes at least 1 argument (0 given)
 #print(l.index(1,10,20)) ValueError: 1 is not in list
 #print(l.index(1,2)) ValueError: 1 is not in list
@@ -325,3 +336,48 @@ print(l)  # [1, 2, [2, 3]]
 l[2][0]=5
 print(m)  # [1, 2, [5, 3]]
 print(l)  # [1, 2, [5, 3]]
+
+
+# dictionary
+l = list({'a': 1, 'e': 2, 'i': 3, 'o':4, 'u':5})
+print(l)#['i', 'u', 'o', 'e', 'a'] Note: Keys in the dictionary are used as elements of the returned list
+
+# point 1:
+l = [1,2,3]
+l.append({'a': 1, 'e': 2, 'i': 3, 'o':4, 'u':5})
+print(l) #[1, 2, 3, {'a': 1, 'e': 2, 'i': 3, 'o': 4, 'u': 5}]
+
+# point 2:
+m = [1,2,3,{'a': 1, 'e': 2, 'i': 3, 'o':4, 'u':5}]
+print(m) #[1, 2, 3, {'a': 1, 'e': 2, 'i': 3, 'o': 4, 'u': 5}]
+
+
+l = [1,2,3,4,5]
+l[0:] = 'abc'
+print(l) # ['a','b','c']
+
+l = [1,2,3,4,5]
+l[1:] = 'abc'
+print(l) # [1, 'a','b','c']
+
+l = [1,2]
+l[1:] = 'abc'
+print(l) # [1, 'a','b','c']
+
+
+# Asignment
+a = []
+#a[0]=10 # IndexError: list assignment index out of range
+
+l = []
+if l:
+    print("True")
+else:
+    print("False") # output False
+    
+    
+l = [None]
+if l:
+    print("True") # Output True
+else:
+    print("False")
