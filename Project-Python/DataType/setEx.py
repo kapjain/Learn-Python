@@ -3,6 +3,8 @@
 1. Mutable
 2. does not support slicing and subscription
 3. element must be immutable
+4. does not allow duplicate
+5. can contain different type of data
 
 
 A set is an unordered collection of items. Every element is unique (no duplicates) and must be immutable (which cannot be changed).
@@ -28,8 +30,9 @@ Note: It can have any number of items and they may be of different types (intege
  '__new__', '__or__', '__rand__', '__reduce__', '__reduce_ex__', '__repr__', '__ror__', '__rsub__', '__rxor__', '__setattr__', '__sizeof__', 
  '__str__', '__sub__', '__subclasshook__', '__xor__',
  
- 'add', 'update', 'pop', 'remove', 'discard','clear', 'copy', 'isdisjoint',  'issubset',  'issuperset',
-  , 'union',   'intersection','difference', 'difference_update', 'intersection_update',  'symmetric_difference', 'symmetric_difference_update']
+ 'add', 'update', 'pop', 'remove', 'discard','clear', 'copy', 
+ 'isdisjoint',  'issubset',  'issuperset',
+ 'union', 'intersection','intersection_update' ,'difference', 'difference_update',  'symmetric_difference', 'symmetric_difference_update']
  
 """
 
@@ -100,7 +103,7 @@ print(next(i))#3
 
 
 
-
+## Basic operation
 s = {'i', 'u', 'o', 'e', 'a'}
 
 # print(s*3) TypeError: unsupported operand type(s) for *: 'set' and 'int'
@@ -114,21 +117,21 @@ print(len(s1)) #3
 
 
 
-# Add elements to the set
-
 # add(immutable object)
+# return : None
 s = {'i', 'u', 'o', 'e', 'a'}
 s.add(1)
 print(s) #{1, 'a', 'e', 'i', 'u', 'o'}
-
 s.add((1,2,3))
 print(s) #{1, 'a', (1, 2, 3), 'e', 'i', 'u', 'o'}
 s.add(range(4))
 print(s) # {range(0, 4), 1, 'a', (1, 2, 3), 'e', 'i', 'u', 'o'}
+# s.add([1,2]) TypeError: unhashable type: 'list'
+# s.add() TypeError: add() takes exactly one argument (0 given)
 
 
-
-# update(sequesnce) update a set with union of itself and other
+# update(iterable object) update a set with union of itself and other
+# return : None
 s = {'i', 'u', 'o', 'e', 'a'}
 s.update([1,2,3])
 print(s) #{'o', 1, 2, 3, 'e', 'a', 'i', 'u'}
@@ -137,26 +140,20 @@ print(s) #{'o', 1, 2, 3, 'e', 'a', 'i', 'u', '1', '2'}
 # s.update(3) TypeError: 'int' object is not iterable
 
 
-
-#remove element from the set
-
-
 # discard(value): remove an element from the set if it is there, other wise do nothing
+# return : None
 s = {'i', 'u', 'o', 'e', 'a'}
-
 s.discard(1) #value not found remain unchanged
 print(s) # {'i', 'u', 'o', 'e', 'a'}
-
 s.discard('a')
 print(s) # {'i', 'u', 'o', 'e'}
 # s.discard('a','b') TypeError: discard() takes exactly one argument (2 given)
 # s.discard() TypeError: discard() takes exactly one argument (0 given)
 
 
-
 #remove(value), it remove a element from a set. it must be a meber other it will through Keyerror
+# return : None
 s = {'i', 'u', 'o', 'e', 'a'}
-
 s.remove('a')
 print(s) # {'u', 'o', 'i', 'e'}
 #s.remove() TypeError: remove() takes exactly one argument (0 given)
@@ -164,8 +161,9 @@ print(s) # {'u', 'o', 'i', 'e'}
 #s.remove(1) KeyError: 1
 
 
-s = {'i', 'u', 'o', 'e', 'a'}
 #s.pop() it remove an arbitrary element from set and raise key error when set is empty
+# return: value
+s = {'i', 'u', 'o', 'e', 'a'}
 s.pop()#'u'
 s.pop()#'a'
 s.pop()#'i'
@@ -177,6 +175,7 @@ print(s)# set()
 
 
 #clear() remove all element from the set
+# return: None
 s = {'i', 'u', 'o', 'e', 'a'}
 s.clear()
 print(s)# set()
@@ -185,7 +184,7 @@ print(s) #set()
 
 
 # copy(): D.copy() a shallow copy of D
- 
+# return: shalow copy of set
 s = {'i', 'u', 'o', 'e', 'a'}
 s1 = s.copy()
 print(s) #{'u', 'e', 'a', 'o', 'i'}
@@ -195,35 +194,24 @@ print(s1) #{'u', 1, 'e', 'a', 'o', 'i'}
 print(s1) #{'e', 'o', 'i', 'a', 'u'}
 
 
-
-
-#The isdisjoint() method returns True if two sets are disjoint sets. If not, it returns False.
-#Two sets are said to be disjoint sets if they have no common elements. For example:
+# isdisjoint(): Two sets are said to be disjoint sets if they have no common elements.
+# return: True if two sets are disjoint sets. If not, it returns False.
 
 A = {1, 5, 9, 0}
 B = {2, 4, -5}
-
-#isdisjoint() Parameters
-
 #The isdisjoint() method takes a single argument (a set).
-
 #You can also pass an iterable (list, tuple, dictionary and string) to disjoint(). The isdisjoint() method will automatically convert iterables to 
 #set and checks whether the sets are disjoint or not.
-
 A = {1, 2, 3, 4}
 B = {5, 6, 7}
 C = {4, 5, 6}
-
 print('Are A and B disjoint?', A.isdisjoint(B)) # True
 print('Are A and C disjoint?', A.isdisjoint(C))    # False
-
-
 A = {'a', 'b', 'c', 'd'}
 B = ['b', 'e', 'f']
 C = '5de4'
 D ={1 : 'a', 2 : 'b'}
 E ={'a' : 1, 'b' : 2}
-
 print('Are A and B disjoint?', A.isdisjoint(B)) # False
 print('Are A and C disjoint?', A.isdisjoint(C)) # False
 print('Are A and D disjoint?', A.isdisjoint(D)) # True
@@ -231,48 +219,32 @@ print('Are A and E disjoint?', A.isdisjoint(E)) # False
 
 
 
-
-
-#The issubset() method returns True if all elements of a set are present in another set (passed as an argument). If not, it returns False.
-
+# issubset():
+# return: True if all elements of a set are present in another set (passed as an argument). If not, it returns False.
 A = {1, 2, 3}
 B = {1, 2, 3, 4, 5}
 C = {1, 2, 4, 5}
-
-# Returns True
-print(A.issubset(B))
-
-# Returns False
+print(A.issubset(B)) # Returns True
 # B is not subset of A
-print(B.issubset(A))
-
-# Returns False
-print(A.issubset(C))
-
-# Returns True
-print(C.issubset(B))
+print(B.issubset(A)) # Returns False
+print(A.issubset(C)) # Returns False
+print(C.issubset(B)) # Returns True
 
 
 
-
-#The issuperset() method returns True if a set has every elements of another set (passed as an argument). If not, it returns False.
+# issuperset():
+# return: True if a set has every elements of another set (passed as an argument). If not, it returns False.
 A = {1, 2, 3, 4, 5}
 B = {1, 2, 3}
 C = {1, 2, 3}
-
-# Returns True
-print(A.issuperset(B))
-
-# Returns False
-print(B.issuperset(A))
-
-# Returns True
-print(C.issuperset(B))
+print(A.issuperset(B)) # Returns True
+print(B.issuperset(A)) # Returns False
+print(C.issuperset(B)) # Returns True
 
 
 
-
-# union() The union() method returns a new set with distinct elements from all the sets.
+# union():
+# return: a new set with distinct elements from all the sets.
 A = {'a', 'c', 'd'}
 B = {'c', 'd', 2 }
 C= {1, 2, 3}
@@ -280,19 +252,15 @@ C= {1, 2, 3}
 #we can use | operator for union
 print('A U B =', A.union(B)) # A | B {2, 'a', 'd', 'c'}
 print('B U C =', B.union(C)) # {1, 2, 3, 'd', 'c'}
-
 print('A U B U C =', A.union(B, C)) # {1, 2, 3, 'a', 'd', 'c'}
-
 print('A.union() = ', A.union()) # {'a', 'd', 'c'}
 
 
 
-
-# The intersection() method returns a new set with elements that are common to all sets.
+# intersection() method returns a new set with elements that are common to all sets.
 A = {2, 3, 5, 4}
 B = {2, 5, 100}
 C = {2, 3, 8, 9, 10}
-
 #we can use & operator for intersection
 print(B.intersection(A)) # {2, 5}
 print(B.intersection(C)) # {2}
@@ -301,69 +269,50 @@ print(C.intersection(A, B)) # {2}
 
 
 
-#The intersection_update() updates the set calling intersection_update() method with the intersection of sets.
+# intersection_update() updates the set calling intersection_update() method with the intersection of sets.
 A = {1, 2, 3, 4}
 B = {2, 3, 4, 5}
-
 result = A.intersection_update(B)
-
 print('result =', result) # None
 print('A =', A) # {2, 3, 4}
 print('B =', B) # {2, 3, 4, 5, 6}
 
 
 
-
-
-
 # difference: If A and B are two sets. The set difference of A and B is a set of elements that exists only in set A but not in B.
-
 A = {'a', 'b', 'c', 'd'}
 B = {'c', 'f', 'g'}
-
-# Equivalent to A-B {'b', 'a', 'd'}
-print(A.difference(B))
-
-# Equivalent to B-A {'g', 'f'}
-print(B.difference(A))
+print(A.difference(B)) # Equivalent to A-B {'b', 'a', 'd'}
+print(B.difference(A)) # Equivalent to B-A {'g', 'f'}
 
 
 
-#The difference_update() updates the set calling difference_update() method with the difference of sets.
+# difference_update() updates the set calling difference_update() method with the difference of sets.
 A = {'a', 'c', 'g', 'd'}
 B = {'c', 'f', 'g'}
-
 result = A.difference_update(B)
-
 print('A = ', A) # {'d', 'a'}
 print('B = ', B) # {'c', 'g', 'f'}
 print('result = ', result) # None
 
 
 
-
-#The symmetric_difference() returns a new set which is the symmetric difference of two sets. 
+# symmetric_difference() :
+# return: a new set which is the symmetric difference of two sets. 
 #The symmetric difference of two sets A and B is the set of elements which are in either of the sets A or B but not in both.
-
 A = {'a', 'b', 'c', 'd'}
 B = {'c', 'd', 'e' }
 C = {}
-
 print(A.symmetric_difference(B)) # A ^ B {'b', 'a', 'e'}
 print(B.symmetric_difference(A)) # {'b', 'e', 'a'}
-
 print(A.symmetric_difference(C)) # {'b', 'd', 'c', 'a'}
 print(B.symmetric_difference(C)) # {'d', 'e', 'c'}
 
 
-
-
-#The symmetric_difference_update() method updates the set calling the symmetric_difference_update() with the symmetric difference of sets.
+# symmetric_difference_update(): method updates the set calling the symmetric_difference_update() with the symmetric difference of sets.
 A = {'a', 'c', 'd'}
 B = {'c', 'd', 'e' }
-
 result = A.symmetric_difference_update(B)
-
 print('A = ', A) # {'a', 'e'}
 print('B = ', B) # {'d', 'c', 'e'}
 print('result = ', result) # None
