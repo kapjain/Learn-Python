@@ -5,7 +5,7 @@
 a = map(lambda x: x*x, [1,2,3])
 print(list(a)) # [1,4,9]
 
-n = map(lambda a,b: a+b if b else a+10, [1,2,3,4,5], [1,2,3])
-print(list(n)) #[2, 4, 6] Executed till second list, since that got exasted first
+n = map(lambda a,b: a+b if b else a+10, [1,2,3,4,5], [1,2,3,0])
+print(list(n)) #[2, 4, 6, 14] Executed till second list, since that got exasted first
 
 # a = map(None, [1,2,3])) TypeError: 'NoneType' object is not callable
