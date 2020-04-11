@@ -1,5 +1,6 @@
 # filter(function or None, iterable) : return those item of sequence for which function is true. if function is None, return the items that are true
 # return: a filter object
+# It takes exactly two argument
 
 def filterVowels(alphabet):
     return True if alphabet in ['a', 'e', 'i', 'o', 'u'] else False
@@ -30,3 +31,5 @@ print(list(b)) # [1, 2, 3]
 
 b = filter(None,{'a':10,'b':20})
 print(list(b))
+
+#f = filter(lambda x,y: x*y,[1,0,3],[1,2,3]) TypeError: filter expected 2 arguments, got 3
