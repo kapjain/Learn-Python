@@ -64,3 +64,5 @@ print(type(t))
 
 tuple(x**2 for x in range(10))
 
+[[word for word in line] for line in "ab cd fe".split()] # [['a', 'b'], ['c', 'd'], ['f', 'e']]
+[word for line in "ab cd fe".split() for word in line] # ['a', 'b', 'c', 'd', 'f', 'e']
