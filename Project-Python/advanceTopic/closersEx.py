@@ -1,26 +1,31 @@
 """
 First-class Function:  "A programming language is said to have first-class functions if it treats functions as first-class citizens."
 
-First-class Citizen (Programming): "A first-class citizen (sometimes called first-class objects) in a programming language is an entity which supports all the
-    operations generally available to other entities. These operations typically include being passed as an argument, returned from a function and assigned to a variable."
+First-class Citizen (Programming): "A first-class citizen (sometimes called first-class objects) in a programming language is an entity
+which supports all the operations generally available to other entities. These operations typically include being passed as an argument,
+returned from a function and assigned to a variable."
 
 
 What is closure:
 The technique by which some data ("Hello") gets attached to the code is called closure in Python.
-This value in the enclosing scope is remembered even when the variable goes out of scope or the functionEx itself is removed from the current namespace.
+This value in the enclosing scope is remembered even when the variable goes out of scope or the functionEx itself is removed from the
+current namespace.
 
-1. A functionEx defined inside another functionEx is called a nested functionEx. Nested functions can access variables of the enclosing scope.
-2. In Python, these non-local variables are read only by default and we must declare them explicitly as non-local (using nonlocal keyword) in order to modify them.
+1. A functionEx defined inside another functionEx is called a nested functionEx. Nested functions can access variables of the 
+enclosing scope.
+2. In Python, these non-local variables are read only by default and we must declare them explicitly as non-local (using nonlocal 
+keyword) in order to modify them.
 
 
 When to use closures?
-Closures can avoid the use of global values and provides some form of data hiding. It can also provide an object oriented solution to the problem.
+Closures can avoid the use of global values and provides some form of data hiding. It can also provide an object oriented solution 
+to the problem.
 
 Conditions for creating closure:
 
-1. We must have a nested functionEx (functionEx inside a functionEx).
-2. The nested functionEx must refer to a value defined in the enclosing functionEx.
-3. The enclosing functionEx must return the nested functionEx.
+1. We must have a nested functionEx (inner_func inside a outer_func).
+2. The nested inner_func must refer to a value defined in the enclosing outer_func.
+3. The enclosing outer_func must return the nested inner_func.
 
 """
 
