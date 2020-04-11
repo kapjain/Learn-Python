@@ -1,41 +1,26 @@
-'''
-Using enumerate(sequence object) function you can iterate through the sequence and retrieve the index position and its corresponding value at the same time.
-'''
-
 grocery = ['bread', 'milk', 'butter']
 enumerateGrocery = enumerate(grocery)
 
-print(type(enumerateGrocery))
+print(type(enumerateGrocery)) # <class 'enumerate'>
+print(enumerateGrocery) # <enumerate object at 0x019C6868>
+print(list(enumerateGrocery)) # [(0, 'bread'), (1, 'milk'), (2, 'butter')]
+print(list(enumerateGrocery)) # [] Note can not iterate twise on a iterable object
 
-# converting to list
-print(list(enumerateGrocery))
 
 # changing the default counter
 enumerateGrocery = enumerate(grocery, 10)
-print(list(enumerateGrocery))
+print(list(enumerateGrocery)) # [(10, 'bread'), (11, 'milk'), (12, 'butter')]
 
-
-
-
-grocery = ['bread', 'milk', 'butter']
 
 for item in enumerate(grocery):
     print(item)
+#(0, 'bread')
+#(1, 'milk')
+#(2, 'butter')
 
-print('\n')
-for count, item in enumerate(grocery):
+
+for count, item in enumerate([10,11,12]):
     print(count, item)
-
-print('\n')
-# changing default start value
-for count, item in enumerate(grocery, 100):
-    print(count, item)
-  
-  
-
-for i,v in enumerate(['h','j','k']):
-    print(i,v)
-
-l = [7,8,9]
-for i,v in enumerate(l):
-    print(i,v)
+# 0 10
+# 1 11
+# 2 12
