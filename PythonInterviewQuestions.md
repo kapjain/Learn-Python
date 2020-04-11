@@ -1,6 +1,7 @@
 1. What is Python. Why it is so popular language now a days?
 2. Features of python and its advantages and disadvantages?
 3. What is the diffrence between '__str__' and '__repr__' method?
+3. What is the diffrence between '__init__' and '__new__' method?
 4. What is monkey patching. How to implement it in python?
 5. What is mutable and immutable objects?
 6. How to share a vairable across all the file?
@@ -47,7 +48,7 @@
 47. What is with expresion?
 48. What is tuple unpacking?
 49. Name some of the python error tht you know?
-50. Why dictionary should be immutable?
+50. Why dictionary keys must be immutable?
 51. Can we write the code inside __init__.py file?
 52. Why was the language called python?
 53. Is python case sensitive langugae?
