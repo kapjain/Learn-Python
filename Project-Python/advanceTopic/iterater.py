@@ -38,9 +38,9 @@ class Reverse:
     """Iterator for looping over a sequence backwards."""
     def __init__(self, data):
         self.data = data
-        self.index = len(data)
 
     def __iter__(self):
+        self.index = len(data)
         return self
 
     def __next__(self):
