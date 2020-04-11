@@ -2,6 +2,8 @@
 1. Immutable
 2. does not support slicing and subscription
 3. element must be immutable
+4. Can not contain duplicate element
+5. Can contain multiple type of data
 
 Frozenset: Frozenset is a new class that has the characteristics of a set, but its elements cannot be changed once assigned. While tuples are immutable 
 lists, frozensets are immutable sets.
@@ -14,7 +16,9 @@ Due to this, frozen sets can be used as key in Dictionary or as element of anoth
  '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__ne__', '__new__', '__or__', '__rand__', '__reduce__', 
  '__reduce_ex__', '__repr__', '__ror__', '__rsub__', '__rxor__', '__setattr__', '__sizeof__', '__str__', '__sub__', '__subclasshook__', '__xor__',
  
-  'copy', 'difference', 'intersection', 'isdisjoint', 'issubset', 'issuperset', 'symmetric_difference', 'union']
+ 'copy'
+ 'isdisjoint', 'issubset', 'issuperset'
+ 'union', 'difference', 'intersection', 'symmetric_difference', ]
 """
 
 
