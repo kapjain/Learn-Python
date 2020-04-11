@@ -40,7 +40,7 @@ class Reverse:
         self.data = data
 
     def __iter__(self):
-        self.index = len(data)
+        self.index = len(self.data)
         return self
 
     def __next__(self):
