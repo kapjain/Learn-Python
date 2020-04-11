@@ -119,6 +119,9 @@ print(s.title())  # Hi This Is Python
 # 'abcdef' The entire string is printed when the argument passed to center() is less than the length of the string.
 print("abcdef".center(0))
 
+# str length even = left
+# str length odd = right
+
 # When string lenth is odd and width is even: Start from right
 print('a'.center(10,'*'))  # '****a*****'
 print('aaa'.center(10,'*')  # '***aaa****'
@@ -128,13 +131,14 @@ print('aaaa'.center(11,'*')  # '****aaaa***'
 # When string lenth is even and width is also even or vice versa..
 print('aaaa'.center(10,'*'))  # '***aaaa***'
 print('aaa'.center(11,'*'))  # '****aaa****'
-
+      
+print('aaa'.center(1,'*')) # 'aaa'
       
 
 # zfill(width): The zfill() method pads string on the left with zeros to fill width.
 s = 'kapil'
 print(s.zfill(20)) # '000000000000000kapil'
-
+print(s.zfill(2)) # 'kapil'
 
 
 #str.ljust(width, fillchar=' ' or fillchar=single_space): The original string is returned if width is less than len(s).
@@ -143,7 +147,10 @@ s = "this is string example....wow!!!"
 
 print (s.ljust(50, '*')) #this is string example....wow!!!******************
 print (s.rjust(50, '*')) #******************this is string example....wow!!!
-
+      
+print (s.ljust(1, '*'))
+print (s.rjust(1, '*'))
+# print (s.ljust()) TypeError: ljust expected at least 1 argument, got 0
 
 
 # count(sub,start = 0,end = len(string)): The count() method returns the number of occurrences of substring sub in the range [start, end]. Optional arguments start and end are interpreted as in slice notation.
@@ -230,6 +237,8 @@ seq = [1,2,3]
 s = ','
 #s.join(seq) TypeError: sequence item 0: expected str instance, int found
 
+s = ["a","n","c"]
+"".join(s) # 'anc'
 
 
 # strip(chars): The strip() method returns a copy of the string in which all chars have been stripped from the beginning and the end of the string 
@@ -289,7 +298,9 @@ print(' a b c '.rsplit()) #['a', 'b', 'c']
 print(' a b c '.rsplit(None, 1)) #[' a b', 'c']
 print(' a b c '.rsplit(None, 2)) #[' a', 'b', 'c']
 
-
+#note : can not use blank line to seprate a string
+# 'abc'.split('') ValueError: empty separator
+      
 
 # splitlines( num = string.count('\n')): The splitlines() method returns a list with all the lines in string, optionally including the line breaks (if num is supplied and is true).
 #num − This is any number, if present then it would be assumed that line breaks need to be included in the lines.
@@ -302,6 +313,10 @@ print(s.splitlines())  # ['Hi this is      hi     is this kapil ', 'this ', '', 
 s = '\n\n'
 print(s.splitlines()) # ['', '']
 
+s = """1
+2
+3"""
+s.splitlines() #['1', '2', '3']
       
 
 s1 = '12345'
@@ -365,12 +380,14 @@ True
 s = 'hi\nk'
 print(s.isprintable()) #False
 
-#isidentifier- return true if the string is identifier mean any pythin keyword funfunctionExass
+#isidentifier- return true if the string is identifier mean any python keyword, function, class name
 
 s = 'else'
 print(s.isidentifier()) #True
 s = 'None'
 print(s.isidentifier()) #True
+
+print("map".isidentifier()) # True
 
 
 
