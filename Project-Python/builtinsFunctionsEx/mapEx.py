@@ -1,21 +1,11 @@
-#map(function, sequence1[,sequence2]..) return a list
-a = list(map(lambda x: x*x, [1,2,3]))
-print(a)
+# map(func, *iterables): Make an iterator that computes the function using arguments from each of the iterables.  Stops when the shortest
+# iterable is exhausted.
+# return : a map object
 
-a = list(map(lambda x: x*x, (1,2,3)))
-print(a)
+a = map(lambda x: x*x, [1,2,3])
+print(list(a)) # [1,4,9]
 
-a = list(map(lambda x: x*x, range(1,11)))
-print(a)
+n = map(lambda a,b: a+b if b else a+10, [1,2,3,4,5], [1,2,3])
+print(list(n)) #[2, 4, 6] Executed till second list, since that got exasted first
 
-a = list(map(lambda x: x*2, "hello"))
-print(a)
-
-n = list(map(lambda a,b: a+b if b else a+10, [1,2,3,4,5], [1,2,3]))
-print(n) #[2, 4, 6]
-
-try:
-    a = list(map(None, [1,2,3])) #TypeError: 'NoneType' object is not callable
-    print(a)
-except Exception as e:
-    print(e)
+# a = map(None, [1,2,3])) TypeError: 'NoneType' object is not callable
