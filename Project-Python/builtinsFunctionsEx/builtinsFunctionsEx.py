@@ -10,10 +10,14 @@ l = [1,2,3]
 m = [1,2,0]
 n = [1, False]
 o = []
-print(all(l))
-print(all(m))
-print(all(n))
-print(all(o))
+p = [[],'',(),{},frozenset({}),set(),0,0.0,False,None,0+0j]
+q = [[None],'',(),{},frozenset({}),set(),0,0.0,False,None,0+0j]
+print(all(l)) # True
+print(all(m)) # False
+print(all(n)) # False
+print(all(o)) # True because iterable is empty
+print(all(p)) # False
+print(all(q)) # False
 
 # any(iteratable) : Return True if any element of the iterable is true. If the iterable is empty, return False.
 print("******************************************any() Example***********************************")
@@ -21,10 +25,14 @@ l = [1,2,3]
 m = [False,0]
 n = [1, False]
 o = []
-print(any(l))
-print(any(m))
-print(any(n))
-print(any(o))
+p = [[],'',(),{},frozenset({}),set(),0,0.0,False,None,0+0j]
+q = [[None],'',(),{},frozenset({}),set(),0,0.0,False,None,0+0j]
+print(any(l)) # True
+print(any(m)) # False 
+print(any(n)) # True
+print(any(o)) # False because iterable is empty
+print(any(p)) # False
+print(any(q)) # True
 
 #ascii(object) : The ascii() method returns a string containing a printable representation of an object(string,list,.
 # It escapes the non-ASCII characters in the string using \x, \u or \U escapes.
