@@ -1,4 +1,5 @@
-# filter(function or None, sequence) : return those item of sequence for which function is true if function is None, return the items that are true
+# filter(function or None, iterable) : return those item of sequence for which function is true. if function is None, return the items that are true
+# return: a filter object
 
 def filterVowels(alphabet):
     return True if alphabet in ['a', 'e', 'i', 'o', 'u'] else False
