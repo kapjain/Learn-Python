@@ -1,12 +1,13 @@
 """
-Iterators are everywhere in Python. They are elegantly implemented within for loops, comprehensions, generators etc. but hidden in plain sight.
+Iterators are everywhere in Python. They are elegantly implemented within for loops, comprehensions, generators etc. 
+but hidden in plain sight.
 
 Iterator in Python is simply an object that can be iterated upon. An object which will return data, one element at a time.
-
 Technically speaking, Python iterator object must implement two special methods, __iter__() and __next__(), collectively called the
- iterator protocol.
+iterator protocol.
 
-An object is called iterable if we can get an iterator from it. Most of built-in containers in Python like: list, tuple, string etc. are iterables.
+An object is called iterable if we can get an iterator from it. Most of built-in containers in Python like: list, tuple, string etc. 
+are iterables.
 
 The iter() functionEx (which in turn calls the __iter__() method) returns an iterator from them.
 
@@ -19,8 +20,8 @@ next(it) #'b'
 it.__next__() #'c'
 #next(it) # Traceback (most recent call last):  File "<stdin>", line 1, in <module>     next(it) StopIteration
 
-#A more elegant way of automatically iterating is by using the for loop. Using this, we can iterate over any object that can return an iterator,
-#for example list, string, file etc.
+#A more elegant way of automatically iterating is by using the for loop. Using this, we can iterate over any object that can return 
+# an iterator, for example list, string, file etc.
 for element in [1, 2, 3]:
     print(element)
 for element in (1, 2, 3):
