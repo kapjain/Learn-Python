@@ -1,3 +1,6 @@
+# enumerate(iterable, start=0) : The enumerate object yields pairs containing a count (from start, which defaults to zero) and a value yielded by the iterable argument.
+# Return: an enumerate object.
+
 grocery = ['bread', 'milk', 'butter']
 enumerateGrocery = enumerate(grocery)
 
