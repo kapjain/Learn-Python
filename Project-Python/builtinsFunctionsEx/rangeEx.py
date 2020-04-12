@@ -67,3 +67,6 @@ rangeObject[index]                                                              
 r = range(10,-1,-1)
 print(r[0]) #10
 print(r[1]) #9
+
+# Like range(), but instead of returning a list, returns an object that generates the numbers in the range on demand. 
+# For looping, this is slightly faster than range() and more memory efficient.
