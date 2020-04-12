@@ -73,47 +73,42 @@ tata = Car('Bolt',2016,800000)
 
 # Note 1: class variable can call by class name or object(instance) of the class
 print(honda.cc)  # 100
-print(Car.cc) # 100 if you change the value of Car.cc it show in all instances but if you change tata.cc it will not effect other 
+print(tata.cc) # 100
+print(Car.cc) # 100 if you change the value of Car.cc it show in all instances but if you change tata.cc it will not effect other
+
 tata.cc=150
-print(tata.cc) #150
 
-
-
-
-print(honda.cc)#100
-print(tata.cc)#100
-print(Car.cc)#100
+print(honda.cc) # 100
+print(tata.cc) # 150
+print(Car.cc) # 100
 
 honda.cc = 110
 
-print(honda.cc)#110
-print(tata.cc)#100
-print(Car.cc)#100
+print(honda.cc) # 110
+print(tata.cc) # 150
+print(Car.cc) # 100
 
+Car.cc = 160
 
-Car.cc = 150
-print(honda.cc)#110
-print(tata.cc)#150
-print(Car.cc)#150
-
-
-
+bmw = Car('S3',2016,8020000)
+print(honda.cc) # 110
+print(tata.cc) # 150
+print(Car.cc) # 160
+print(bmw.cc) # 160
 
 # Note 2: instance variable can not call by class name. they only called by instance of the class
 print(honda.modelname) # City
-#print(Car.modelname) 
-#AttributeError: type object 'Car' has no attribute 'modelname'
+#print(Car.modelname) AttributeError: type object 'Car' has no attribute 'modelname'
 
 
 # Note 3: methods of the class can not be called by class name, they only called by class instances(object)
 print(honda.price_inc()) #1150000.0
+
 #print(Car.price_inc()) #TypeError: price_inc() missing 1 required positional argument: 'self'
 
 print(Car.price_inc(honda)) #1150000.0
 
 
-
-input()
 # Note 4:  we can refer the method of the class by  class name but can not call
 print(honda.price_inc) # <bound method Car.price_inc of <__main__.Car object at 0x02E1F030>>
 print(Car.price_inc) # <function Car.price_inc at 0x02E1C9C0>
@@ -130,10 +125,13 @@ class Cv:
         print(Cv.counter) # 0 class variable
 
 o1= Cv()
+# note: if there is already a instance vairable with same name as class variable name, then we can not access class variable using self.
+# We can access it using class name.
 
 
-
-print("Example 3: __init__() is not mandatory but if you define in class then all the parameter are required parameter in constructor __init__ except self ")
+print("Example 3: __init__() is not mandatory but if you define in class then all the parameter are required parameter in constructor 
+      __init__ except self ")
+      
 class Shark1:
     def __init__(self, name, age):
         self.name = name
