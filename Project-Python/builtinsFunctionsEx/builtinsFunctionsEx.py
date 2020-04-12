@@ -89,11 +89,14 @@ print(ord('a'))
 
 
 
-#bin(number or object): The bin() method converts and returns the binary equivalent string of a given integer. If the parameter isn't an integer, it has to implement __index__() method to return an integer.
+# bin(integer or object): parameter must be integer
+# return: the binary equivalent string of a given integer.
+# If the parameter isn't an integer, it has to implement __index__() method to return an integer.
 print("******************************************bin() Example***********************************")
-print(bin(10))
-print(bin(0o31))
-print(bin(0xf))
+print(bin(10)) # 0b1010
+print(bin(0o31)) # 0b11001
+print(bin(0xf)) # 0b1111
+print(bin(10.3)) # TypeError: 'float' object cannot be interpreted as an integer
 
 class Quantity:
     apple = 1
@@ -102,13 +105,55 @@ class Quantity:
     
     def __index__(self):
         return self.apple + self.orange + self.grapes
-print('The binary equivalent of quantity is:', bin(Quantity()))
+print('The binary equivalent of quantity is:', bin(Quantity())) # 0b1111
 
 
 
-#bool(object): The bool() method converts a value to Boolean (True or False) using the standard truth testing procedure.
-#    It's not mandatory to pass a value to bool(). If you do not pass a value, bool() returns False.
-#The following values are considered false in Python:
+# oct(integer or object): Return the octal representation of an integer
+# return: its octal representation. 
+# If the given number is not an int, it must implement __index__() method to return an integer.
+print("******************************************oct() Example***********************************")
+print(oct(10)) # 0o12
+print(oct(0b101)) # 0o5
+print(oct(0XA)) # 0o12
+
+class Quantity:
+    apple = 1
+    orange = 2
+    grapes = 12
+    
+    def __index__(self):
+        return self.apple + self.orange + self.grapes
+print('The binary equivalent of quantity is:', oct(Quantity())) # 0o17
+
+
+
+# hex(integer or object): Return the hexadecimal representation of an integer.
+# return: hexadecimal string.
+# If the given number isn't an int, it must implement __index__() method to return an integer.
+print("******************************************hex() Example***********************************")
+print(hex(435)) # 0x1b3
+print(hex(0)) # 0x0
+print(hex(-34)) # -0x22
+print(type(hex(10))) # <class 'str'>
+
+print(float.hex(2.5)) # 0x1.4000000000000p+1
+print(float.hex(0.0)) # 0x0.0p+0
+print(float.hex(10.5)) # 0x1.5000000000000p+3
+
+class Quantity:
+    apple = 1
+    orange = 2
+    grapes = 12
+    
+    def __index__(self):
+        return self.apple + self.orange + self.grapes
+print('The binary equivalent of quantity is:', hex(Quantity())) # 0xf
+
+
+# bool(object): The bool() method converts a value to Boolean (True or False) using the standard truth testing procedure.
+# It's not mandatory to pass a value to bool(). If you do not pass a value, bool() returns False.
+# The following values are considered false in Python:
 
 #   None
 #    False
@@ -279,28 +324,6 @@ print(any(p)) # False
 print(any(q)) # True
 
 
-#The hex() function converts an integer number to the corresponding hexadecimal string.
-print("******************************************hex() Example***********************************")
-number = 435
-print(number, 'in hex =', hex(number))
-
-number = 0
-print(number, 'in hex =', hex(number))
-
-number = -34
-print(number, 'in hex =', hex(number))
-
-returnType = type(hex(number))
-print('Return type from hex() is', returnType)
-
-number = 2.5
-print(number, 'in hex =', float.hex(number))
-
-number = 0.0
-print(number, 'in hex =', float.hex(number))
-
-number = 10.5
-print(number, 'in hex =', float.hex(number))
 
 
 #The id() function returns identity (unique integer) of an object.
@@ -335,16 +358,6 @@ print(dir(test)) #<class 'object'>
 
 
 
-#The oct() method takes an integer number and returns its octal representation. If the given number is an int, it must implement __index__() method to return an integer.
-print("******************************************oct() Example***********************************")
-# decimal number
-print('oct(10) is:', oct(10))
-
-# binary number
-print('oct(0b101) is:', oct(0b101))
-
-# hexadecimal number
-print('oct(0XA) is:', oct(0XA))
 
 
 
