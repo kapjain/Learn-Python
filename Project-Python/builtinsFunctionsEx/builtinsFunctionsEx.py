@@ -71,6 +71,24 @@ print('Pyth\xf6n is interesting') # Pythön is interesting
 
 
 
+# chr(ascii_value): 0 <= i <= 0x10ffff. valid range of the integer is from 0 through 1,114,111.
+# return: a character (a string) from an integer (represents unicode code point of the character).
+print("******************************************chr() Example***********************************")
+print(chr(65))
+#print(chr(1114112)) ValueError: chr() arg not in range(0x110000)
+#print(chr(-1)) ValueError: chr() arg not in range(0x110000)
+
+
+
+# ord(single_character): string length must be 1.
+# returns: an integer representing Unicode code point for the given Unicode character(only character).
+print("******************************************ord() Example***********************************")
+print(ord('a'))
+# print(ord('')) TypeError: ord() expected a character, but string of length 0 found
+# print(ord('ab') TypeError: ord() expected a character, but string of length 2 found
+
+
+
 #bin(number or object): The bin() method converts and returns the binary equivalent string of a given integer. If the parameter isn't an integer, it has to implement __index__() method to return an integer.
 print("******************************************bin() Example***********************************")
 print(bin(10))
@@ -120,18 +138,7 @@ print(test,'is',bool(test))
 
 
 
-#The chr(ascii value) method returns a character (a string) from an integer (represents unicode code point of the character).
-#The valid range of the integer is from 0 through 1,114,111.
-print("******************************************chr() Example***********************************")
-print(chr(65))
-#print(chr(1114112)) ValueError: chr() arg not in range(0x110000)
-#print(chr(-1)) ValueError: chr() arg not in range(0x110000)
 
-
-#The ord(character) method returns an integer representing Unicode code point for the given Unicode character(only character).
-print("******************************************ord() Example***********************************")
-print(ord('a'))
-#print(ord('ab')
 
 
 
