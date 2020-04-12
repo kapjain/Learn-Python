@@ -1,94 +1,103 @@
-Math:
+## Math:
 1. abs(): Returns absolute value of a number
 2. divmod(): Returns quotient and remainder of integer division
-3. max(): Returns the largest of the given arguments or items in an iterable
-4. min(): Returns the smallest of the given arguments or items in an iterable
-5. pow(): Raises a number to a power
-6. round(): Rounds a floating-point value
-7. sum(): Sums the items of an iterable
+3. pow(): Raises a number to a power
+4. round(): Rounds a floating-point value
 
 
-Debugging:
-8. breakpoint(*args, **kws): This function drops you into the debugger at the call site. Internally calls pdb.set_trace() 
+## Type Conversion:
+5. ascii(): Returns a string containing a printable representation of an object
+6. chr(): Returns string representation of character given by integer argument
+7. ord(): Returns integer representation of a character
 
+8. bin(): Converts an integer to a binary string
+9. oct(): Converts an integer to an octal string
+10. hex(): Converts an integer to a hexadecimal string
 
-Type Conversion:
-9. ascii(): Returns a string containing a printable representation of an object
-10. bin(): Converts an integer to a binary string
 11. bool():	Converts an argument to a Boolean value
-12. chr(): Returns string representation of character given by integer argument
-13. complex(): Returns a complex number constructed from arguments
-14. float():Returns a floating-point object constructed from a number or string
-15. hex(): Converts an integer to a hexadecimal string
-16. int(): Returns an integer object constructed from a number or string
-17. oct(): Converts an integer to an octal string
-18. ord(): Returns integer representation of a character
-19. repr(): Returns a string containing a printable representation of an object
-20. str(): Returns a string version of an object
-21. type(): Returns the type of an object or creates a new type object
+12. int(): Returns an integer object constructed from a number or string
+13. float():Returns a floating-point object constructed from a number or string
+14. complex(): Returns a complex number constructed from arguments
+
+15. repr(): Returns a string containing a printable representation of an object
 
 
-Iterables and Iterators:
-22. all(): Returns True if all elements of an iterable are true
-23. any(): Returns True if any elements of an iterable are true
-24. enumerate(): Returns a list of tuples containing indices and values from an iterable
-25. filter(): Filters elements from an iterable
-26. iter(): Returns an iterator object
+## Composite Data Type:
+16. object(): Returns a new featureless object
+17. list(): Constructs a list object
+18. tuple(): Creates a tuple object
+19. dict(): Creates a dict object
+20. set(): Creates a set object
+21. frozenset(): Creates a frozenset object
+22. str(): Returns a string version of an object
+23. bytes(): Creates and returns a bytes object (similar to bytearray, but immutable)
+24. bytearray(): Creates and returns an object of the bytearray class
+
+
+
+## Iterables and Iterators:
+25. max(): Returns the largest of the given arguments or items in an iterable
+26. min(): Returns the smallest of the given arguments or items in an iterable
 27. len(): Returns the length of an object
-28. map(): Applies a function to every item of an iterable
-29. next(): Retrieves the next item from an iterator
-30. range(): Generates a range of integer values
-31. reversed(): Returns a reverse iterator
-32. slice(): Returns a slice object
-33. sorted(): Returns a sorted list from an iterable
+28. sum(): Sums the items of an iterable
+29. all(): Returns True if all elements of an iterable are true
+30. any(): Returns True if any elements of an iterable are true
+31. enumerate(): Returns a list of tuples containing indices and values from an iterable
+32. filter(): Filters elements from an iterable
+33. map(): Applies a function to every item of an iterable
 34. zip(): Creates an iterator that aggregates elements from iterables
+35. reversed(): Returns a reverse iterator
+36. sorted(): Returns a sorted list from an iterable
+31. iter(): Returns an iterator object
+37. next(): Retrieves the next item from an iterator
+38. range(): Generates a range of integer values
+39. slice(): Returns a slice object
 
 
-Composite Data Type:
-35. bytearray(): Creates and returns an object of the bytearray class
-36. bytes(): Creates and returns a bytes object (similar to bytearray, but immutable)
-37. dict(): Creates a dict object
-38. frozenset(): Creates a frozenset object
-39. list(): Constructs a list object
-40. object(): Returns a new featureless object
-41. set(): Creates a set object
-42. tuple(): Creates a tuple object
+
+## Classes, Attributes, and Inheritance:
+40. classmethod(): Returns a class method for a function
+41. staticmethod(): Returns a static method for a function
+42. delattr(): Deletes an attribute from an object
+43. getattr(): Returns the value of a named attribute of an object
+44. hasattr(): Returns True if an object has a given attribute
+45. isinstance(): Determines whether an object is an instance of a given class
+46. issubclass(): Determines whether a class is a subclass of a given class
+47. property(): Returns a property value of a class
+48. setattr(): Sets the value of a named attribute of an object
+49. super(): Returns a proxy object that delegates method calls to a parent or sibling class
 
 
-Classes, Attributes, and Inheritance:
-43. classmethod(): Returns a class method for a function
-44. staticmethod(): Returns a static method for a function
-45. delattr(): Deletes an attribute from an object
-46. getattr(): Returns the value of a named attribute of an object
-47. hasattr(): Returns True if an object has a given attribute
-48. isinstance(): Determines whether an object is an instance of a given class
-49. issubclass(): Determines whether a class is a subclass of a given class
-50. property(): Returns a property value of a class
-51. setattr(): Sets the value of a named attribute of an object
-52. super(): Returns a proxy object that delegates method calls to a parent or sibling class
+
+## Input/Output:
+50. format(): Converts a value to a formatted representation
+51. input(): Reads input from the console
+52. open(): Opens a file and returns a file object
+53. print(): Prints to a text stream or the console
 
 
-Input/Output:
-53. format(): Converts a value to a formatted representation
-54. input(): Reads input from the console
-55. open(): Opens a file and returns a file object
-56. print(): Prints to a text stream or the console
+
+## Variables, References, and Scope:
+54. type(): Returns the type of an object or creates a new type object
+55. help(): Invokes the built-in help system
+56. dir() 	Returns a list of names in current local scope or a list of object attributes
+57. id() 	Returns the identity of an object
+58. locals() 	Updates and returns a dictionary representing current local symbol table
+59. globals() 	Returns a dictionary representing the current global symbol table
+60. vars() 	Returns __dict__ attribute for a module, class, or object
 
 
-Variables, References, and Scope:
-57. dir() 	Returns a list of names in current local scope or a list of object attributes
-58. globals() 	Returns a dictionary representing the current global symbol table
-59. id() 	Returns the identity of an object
-60. locals() 	Updates and returns a dictionary representing current local symbol table
-61. vars() 	Returns __dict__ attribute for a module, class, or object
+
+## Debugging:
+61update. breakpoint(*args, **kws): This function drops you into the debugger at the call site. Internally calls pdb.set_trace() 
 
 
-Miscellaneous:
+
+## Miscellaneous:
 62. callable(): Returns True if object appears callable
 63. compile(): Compiles source into a code or AST object
 64. eval(): Evaluates a Python expression
 65. exec(): Implements dynamic execution of Python code
 66. hash(): Returns the hash value of an object
-67. help(): Invokes the built-in help system
 68. memoryview(): Returns a memory view object
 69. __import__(): Invoked by the import statement
