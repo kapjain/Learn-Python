@@ -1,17 +1,9 @@
 """
-The reversed() method returns the reversed iterator of the given sequence.
+# reversed(sequence): reversed() method returns the reversed iterator of the given sequence.
+# Return: a reverse iterator
 
-reversed() Parameters
-
-The reversed() method takes a single parameter:
-
-    seq - sequence that should be reversed
-    Could be an object that supports sequence protocol (__len__() and __getitem__() methods) as tuple, string, list or range
-    Could be an object that has implemented __reversed__()
-
-Return value from reversed()
-
-The reversed() method returns an iterator that accesses the given sequence in the reverse order
+# Could be an object that supports sequence protocol (__len__() and __getitem__() methods) as tuple, string, list or range
+# Could be an object that has implemented __reversed__()
 """
 # for string
 seqString = 'Python'
