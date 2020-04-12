@@ -29,18 +29,35 @@ Note: 1. (If no step) Step defaults to 1. Returns a sequence of numbers starting
       3. (if step is non-zero) Checks if the value constraint is met and returns a sequence according to the formula
         If it doesn't meet the value constraint, Empty sequence is returned.
 
-"""
-# empty range
-print(list(range(0))) #[]
 
-# using range(stop)
+"""
+range() constructor has two forms of definition:
+1. range(stop)
+2. range(start, stop[, step])
+
+['__bool__', '__class__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__',
+ '__getitem__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__ne__', '__new__',
+ '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', 
+ 
+ 'count', 'index', 'start', 'step', 'stop']
+"""
+
+
+
+
+print(lrange(10)) # range(0, 10)
 print(list(range(10))) # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+print(list(range(1,10))) # [1, 2, 3, 4, 5, 6, 7, 8, 9] # (If no step) Step defaults to 1
+print(list(range(1,10,2))) # [1, 3, 5, 7, 9]
+print(list(range(-10))) # [] Because stop value is negative
+print(list(range(0))) # [] Because stop value is 0
+print(list(range(-10,-20))) # [] When step value is positive, start value should be less than stop value, otherwise it will return []
+print(list(range(-30,-20))) # [-30, -29, -28, -27, -26, -25, -24, -23, -22, -21]
+print(list(range(-30,-20,-1)) # [] When step value is negative, start value should be greater than stop value, otherwise it will return []
+print(list(range(-10,-20,-1))) # [-10, -11, -12, -13, -14, -15, -16, -17, -18, -19]
 
-# using range(start, stop)
-print(list(range(1, 10)))
+print(range(1,10,0)) # ValueError: range() arg 3 must not be zero
 
-
-"""
 Note: We've converted the range to a Python list, as range() returns a generator-like object that only prints the output on demand
 However, the range object returned by the range constructor can also be accessed by its index. It supports both positive and negative indices.
 You can access the range object by index as:
@@ -50,17 +67,3 @@ rangeObject[index]                                                              
 r = range(10,-1,-1)
 print(r[0]) #10
 print(r[1]) #9
-
-print(list(range(2, 14, 2))) # [2, 4, 6, 8, 10, 12]
-
-
-start = 2
-stop = -14
-step = -2
-
-print(list(range(4, -14, -2))) # [4, 3, 2, 0, -2, -4, -6, -8, -10, -12]
-
-# value constraint not met
-print(list(range(2, 14, -2))) # []
-
-print(list(range(14, 2, -2))) # [14, 12, 10, 8, 6, 4]
