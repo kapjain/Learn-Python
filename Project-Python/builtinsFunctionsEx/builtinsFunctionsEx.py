@@ -1,8 +1,55 @@
-#abs(number) :Return the absolute value(means return positive value) of a number. The argument may be an integer or a floating point number. If the argument is a complex number, its magnitude is returned.
+# abs(number) :Return the absolute value(means return positive value) of a number. The argument may be an integer or a floating
+# point number. If the argument is a complex number, its magnitude is returned.
 print("******************************************abs() Example***********************************")
-print(abs(-1))
-print(abs(-2.3))
+print(abs(-1)) # 1
+print(abs(-2.3)) # 2.3
 print(abs(-3+4j)) #return magnitude for 5.0
+print(abs(0)) # 0
+print(abs(True)) # 1
+print(abs(False)) # 0
+# abs(None) TypeError: bad operand type for abs(): 'NoneType'
+
+
+# divmod(numerator, denominator) method takes two numbers 
+# return: a pair of numbers (a tuple) consisting of their quotient and remainder. Return the tuple (x//y, x%y)
+print("******************************************divmod() Example***********************************")
+
+print(divmod(8, 3)) # (2, 2)
+print(divmod(3, 8)) # (0, 3)
+print(divmod(5, 5)) # (1, 0)
+
+print(divmod(8.0, 3)) # (2.0, 2.0)
+print(divmod(3, 8.0)) # (0.0, 3.0)
+print(divmod(7.5, 2.5)) # (3.0, 0.0)
+print(divmod(2.6, 0.5)) # (5.0, 0.10000000000000009)
+
+
+# pow(base, exp, mod=None):  Equivalent to base**exp with 2 arguments or base**exp % mod with 3 arguments
+print("******************************************pow() Example***********************************")
+# positive x, positive y (x**y) 4
+print(pow(2, 2)) 
+# negative x, positive y 4
+print(pow(-2, 2))
+# positive x, negative y (x**-y) 0.25
+print(pow(2, -2))
+# negative x, negative y 0.25
+print(pow(-2, -2))
+print(pow(7, 2, 5)) # 4
+
+
+#round(number[, ndigits]) : The round() method returns the floating point number rounded off to the given ndigits digits after the decimal point. If no ndigits is
+# provided, it rounds off the number to the nearest integer.
+print("******************************************pow() Example***********************************")
+print(round(10.9)) #11
+print(round(10.5)) #10
+print(round(10.4)) #10
+
+print(round(12.33435,2)) #12.33
+print(round(2.665, 2))# 2.67
+print(round(2.664, 2))# 2.66
+print(round(2.675, 2))# 2.67 # cannot be represented exactly as float
+print(round(2.676, 2))# 2.68
+
 
 # all(iterable) : Return True if all elements of the iterable are true (or if the iterable is empty).
 print("******************************************all() Example***********************************")
@@ -137,18 +184,7 @@ print(dir(l))
 print(dir())#If object is not passed to the dir() method, it returns the list of names in the current local scope.
 
 
-#The divmod(numerator, denominator) method takes two numbers and returns a pair of numbers (a tuple) consisting of their quotient and remainder.
-print("******************************************divmod() Example***********************************")
 
-print('divmod(8, 3) = ', divmod(8, 3))
-print('divmod(3, 8) = ', divmod(3, 8))
-print('divmod(5, 5) = ', divmod(5, 5))
-
-# divmod() with Floats
-print('divmod(8.0, 3) = ', divmod(8.0, 3))
-print('divmod(3, 8.0) = ', divmod(3, 8.0))
-print('divmod(7.5, 2.5) = ', divmod(7.5, 2.5))
-print('divmod(2.6, 0.5) = ', divmod(2.6, 0.5))
 
 
 #float(number or string): The float() method returns a floating point number from a number or a string.
@@ -291,41 +327,6 @@ print('oct(0b101) is:', oct(0b101))
 print('oct(0XA) is:', oct(0XA))
 
 
-#The pow(x, y[, z]) method returns x to the power of y. If the third argument (z) is given, it returns x to the power of y modulus z, i.e. pow(x, y) % z.
-print("******************************************pow() Example***********************************")
-
-# positive x, positive y (x**y) 4
-print(pow(2, 2))
-
-# negative x, positive y 4
-print(pow(-2, 2))
-
-# positive x, negative y (x**-y) 0.25
-print(pow(2, -2))
-
-# negative x, negative y 0.25
-print(pow(-2, -2))
-
-x = 7
-y = 2
-z = 5
-
-print(pow(x, y, z)) # 4
-
-
-
-
-#round(number[, ndigits]) : The round() method returns the floating point number rounded off to the given ndigits digits after the decimal point. If no ndigits is
-# provided, it rounds off the number to the nearest integer.
-print("******************************************pow() Example***********************************")
-print(round(10.9)) #11
-print(round(10.5)) #10
-print(round(10.4)) #10
-print(round(12.33435,2)) #12.33
-
-print(round(2.665, 2))# 2.67
-# cannot be represented exactly as float
-print(round(2.675, 2))# 2.67
 
 
 
