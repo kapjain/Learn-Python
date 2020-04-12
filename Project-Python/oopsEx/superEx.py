@@ -242,7 +242,27 @@ First
 <class 'object'>)
 """
 
+# Example 7
 
+class A:
+    def sub_method(self, b):
+        print('Printing from class A:', b)
+        super().sub_method(b + 1)
+
+
+class B:
+    def sub_method(self, b):
+        super().sub_method(b + 1) # AttributeError: 'super' object has no attribute 'sub_method'
+        print('Printing from class B:', b)
+
+
+class C(A,B):
+    def sub_method(self, b):
+        print('Printing from class C:', b)
+        super().sub_method(b + 1)
+        
+c = C()
+c.sub_method(1)
 
 print("************************************Example 1*************************************")
 class Mammal1(object):
