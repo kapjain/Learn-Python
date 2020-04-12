@@ -80,3 +80,13 @@ k = [
 def getroll(item):
     return item[2]
 print(sorted(k,key = getroll)) # IndexError: tuple index out of range
+
+# Example 4
+s = [
+('Kapil','101','8871337193'),
+('Vishant',100,'887133723'),
+('Sachin',103,'9871337193'),
+]
+def getroll(item):
+    return item[1]
+print(sorted(s,key = getroll )) # TypeError: '<' not supported between instances of 'int' and 'str'
