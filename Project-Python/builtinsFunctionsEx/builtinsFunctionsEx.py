@@ -10,6 +10,7 @@ print(abs(False)) # 0
 # abs(None) TypeError: bad operand type for abs(): 'NoneType'
 
 
+
 # divmod(numerator, denominator) method takes two numbers 
 # return: a pair of numbers (a tuple) consisting of their quotient and remainder. Return the tuple (x//y, x%y)
 print("******************************************divmod() Example***********************************")
@@ -24,6 +25,7 @@ print(divmod(7.5, 2.5)) # (3.0, 0.0)
 print(divmod(2.6, 0.5)) # (5.0, 0.10000000000000009)
 
 
+
 # pow(base, exp, mod=None):  Equivalent to base**exp with 2 arguments or base**exp % mod with 3 arguments
 print("******************************************pow() Example***********************************")
 # positive x, positive y (x**y) 4
@@ -35,6 +37,7 @@ print(pow(2, -2))
 # negative x, negative y 0.25
 print(pow(-2, -2))
 print(pow(7, 2, 5)) # 4
+
 
 
 #round(number[, ndigits]) : The round() method returns the floating point number rounded off to the given ndigits digits after the decimal point. If no ndigits is
@@ -51,41 +54,21 @@ print(round(2.675, 2))# 2.67 # cannot be represented exactly as float
 print(round(2.676, 2))# 2.68
 
 
-# all(iterable) : Return True if all elements of the iterable are true (or if the iterable is empty).
-print("******************************************all() Example***********************************")
-l = [1,2,3]
-m = [1,2,0]
-n = [1, False]
-o = []
-p = [[],'',(),{},frozenset({}),set(),0,0.0,False,None,0+0j]
-q = [[None],'',(),{},frozenset({}),set(),0,0.0,False,None,0+0j]
-print(all(l)) # True
-print(all(m)) # False
-print(all(n)) # False
-print(all(o)) # True because iterable is empty
-print(all(p)) # False
-print(all(q)) # False
 
-# any(iteratable) : Return True if any element of the iterable is true. If the iterable is empty, return False.
-print("******************************************any() Example***********************************")
-l = [1,2,3]
-m = [False,0]
-n = [1, False]
-o = []
-p = [[],'',(),{},frozenset({}),set(),0,0.0,False,None,0+0j]
-q = [[None],'',(),{},frozenset({}),set(),0,0.0,False,None,0+0j]
-print(any(l)) # True
-print(any(m)) # False 
-print(any(n)) # True
-print(any(o)) # False because iterable is empty
-print(any(p)) # False
-print(any(q)) # True
-
-#ascii(object) : The ascii() method returns a string containing a printable representation of an object(string,list,.
-# It escapes the non-ASCII characters in the string using \x, \u or \U escapes.
+# ascii(object) : The ascii() method returns a string containing a printable representation of an object. It escapes the non-ASCII 
+# characters in the string using \x, \u or \U escapes.
 print("******************************************ascii() Example***********************************")
-normalText = 'Python is \n \u00F1 interesting'
-print(ascii(normalText)) # 'Python is \n \xf1 interesting'
+normalText = 'Python is interesting'
+print(ascii(normalText)) # 'Python is interesting'
+
+otherText = 'Pythön is interesting'
+print(ascii(otherText)) # 'Pyth\xf6n is interesting'
+
+randomList = ['Python', 'Pythön', 5]
+print(ascii(randomList)) ['Python', 'Pyth\xf6n', 5]
+
+print('Pyth\xf6n is interesting') # Pythön is interesting
+
 
 
 #bin(number or object): The bin() method converts and returns the binary equivalent string of a given integer. If the parameter isn't an integer, it has to implement __index__() method to return an integer.
@@ -101,7 +84,6 @@ class Quantity:
     
     def __index__(self):
         return self.apple + self.orange + self.grapes
-        
 print('The binary equivalent of quantity is:', bin(Quantity()))
 
 
@@ -257,6 +239,37 @@ print('The hash is:', hash(vowels))
 
 print("******************************************help() Example***********************************")
 help(list)
+
+# all(iterable) : Return True if all elements of the iterable are true (or if the iterable is empty).
+print("******************************************all() Example***********************************")
+l = [1,2,3]
+m = [1,2,0]
+n = [1, False]
+o = []
+p = [[],'',(),{},frozenset({}),set(),0,0.0,False,None,0+0j]
+q = [[None],'',(),{},frozenset({}),set(),0,0.0,False,None,0+0j]
+print(all(l)) # True
+print(all(m)) # False
+print(all(n)) # False
+print(all(o)) # True because iterable is empty
+print(all(p)) # False
+print(all(q)) # False
+
+
+# any(iteratable) : Return True if any element of the iterable is true. If the iterable is empty, return False.
+print("******************************************any() Example***********************************")
+l = [1,2,3]
+m = [False,0]
+n = [1, False]
+o = []
+p = [[],'',(),{},frozenset({}),set(),0,0.0,False,None,0+0j]
+q = [[None],'',(),{},frozenset({}),set(),0,0.0,False,None,0+0j]
+print(any(l)) # True
+print(any(m)) # False 
+print(any(n)) # True
+print(any(o)) # False because iterable is empty
+print(any(p)) # False
+print(any(q)) # True
 
 
 #The hex() function converts an integer number to the corresponding hexadecimal string.
