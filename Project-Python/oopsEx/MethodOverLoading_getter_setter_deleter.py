@@ -1,3 +1,20 @@
+"""
+Method overloading: When a class contain multiple methods with same name is called method overloading.
+
+Note: Python does not support method overloading. If you will create multiple method with same name, python will overide the method,
+the lastest method will get execute.
+
+But we can achieve method overloading using property decorator.
+"""
+class MethodOverloading:
+    def method(self):
+        print("Original Method")
+
+    def method(self):
+        print("Overloaded Method")
+        
+obj = MethodOverloading()
+obj.method() # Overloaded Method
 class Employee:
     
     def __init__(self, fname, lname, sal):
