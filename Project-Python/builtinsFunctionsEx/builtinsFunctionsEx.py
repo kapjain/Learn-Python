@@ -151,57 +151,77 @@ class Quantity:
 print('The binary equivalent of quantity is:', hex(Quantity())) # 0xf
 
 
-# bool(object): The bool() method converts a value to Boolean (True or False) using the standard truth testing procedure.
-# It's not mandatory to pass a value to bool(). If you do not pass a value, bool() returns False.
-# The following values are considered false in Python:
 
-#   None
+# bool(object): The bool() method converts a value to Boolean (True or False)
+# returns: False when yo don't pass any value
+#    None
 #    False
 #    Zero of any numeric type. For example, 0, 0.0, 0j
 #    Empty sequence. For example, (), [], ''.
 #    Empty mapping. For example, {}
 #    objects of Classes which has __bool__() or __len()__ method which returns 0 or False
-
 print("******************************************bool() Example***********************************")
-test = []
-print(test,'is',bool(test))
-
-test = [0]
-print(test,'is',bool(test))#[0] is True
-
-test = 0.0
-print(test,'is',bool(test))
-
-test = None
-print(test,'is',bool(test))
-
-test = True
-print(test,'is',bool(test))
-
-test = 'Easy string'
-print(test,'is',bool(test))
+print(bool([])) # False
+print(bool([0]))# [0] is True
+print(bool(0.0))# False
+print(bool(None))# False
+print(bool(True))# True
+print(bool('Easy string'))# True
 
 
 
+# int(string_of_digit or int or float, base): 
+# return: an integer object from any number or string.
+# int(x=0, base=10) by default and base  Can be 0 (code literal) or 2-36.
+# an integer object from the given number or string, treats default base as 10 and (No parameters) returns 0
+"""
+Convert a number or string to an integer, or return 0 if no arguments are given.  If x is a number, return x.__int__().  For floating point numbers, this truncates towards zero.
+If x is not a number or if base is given, then x must be a string, bytes, or bytearray instance representing an integer literal in the given base.  The literal can be preceded by '+' or '-' and be surrounded by whitespace.  The base defaults to 10.  Valid bases are 0 and 2-36. Base 0 means to interpret the base from the string as an integer literal.
+"""
+print("******************************************int() Example***********************************")
+print(int(123)) # 123
+print(int(123.23)) # 123
+print(int('123')) # 123
+print(int('1010', 2)) # 10
+print(int('0b1010', 2)) # 10
+print(int('12', 8)) # 10
+print(int('0o12', 8)) # 10
+print(int('A', 16)) # 10
+print(int('0xA', 16)) # 10
+# print(int('a')) ValueError: invalid literal for int() with base 10: 'a'
+print(int('1')) # 1
 
 
 
-
-#complex([real[, imag]]):The complex() method returns a complex number when real and imaginary parts are provided, or it converts a string to a complex number.
-#Note: The string passed to the complex() should be in the form real+imagj or real+imagJ otherwise value error
+# complex([real[, imag]]):The complex() method returns a complex number when real and imaginary parts are provided, or it converts a string to a complex number.
+# Note: The string passed to the complex() should be in the form real+imagj or real+imagJ otherwise value error
 print("******************************************complex() Example***********************************")
+print(complex(2, -3)) # (2-3j)
+print(complex(1)) # (1+0j)
+print(complex()) # 0j
+print(complex('5-9j')) # (5-9j)
+print(complex('-2')) # (-2+0j)
+print(complex('j')) # 1j
+# print(complex('a')) ValueError: complex() arg is a malformed string
 
-z = complex(2, -3)
-print(z)
 
-z = complex(1)
-print(z)
 
-z = complex()
-print(z)
+# float(number or string): The float() method returns a floating point number from a number or a string.
+# Must contain decimal numbers.Leading and trailing whitespaces are removed.Optional use of "+", "-" signs.Could contain NaN, Infinity, inf (lowercase or uppercase).
+print("******************************************float() Example***********************************")
+print(float(10)) # 10.0
+print(float(11.22)) # 11.22
+print(float("-13.33")) # -13.33
+print(float("     -24.45\n")) # -24.45
 
-z = complex('5-9j')
-print(z)
+# string float error
+# print(float("abc")) ValueError: could not convert string to float: 'abc'
+
+# print(float('0b10')) ValueError: could not convert string to float: '0b10'
+print(float(0b10)) # 2.0
+print(float(0o10)) # 8.0
+print(float(0x10)) # 16.0
+
 
 
 #The dir() method tries to return a list of valid attributes of the object.
@@ -217,54 +237,6 @@ l = [1,2,3]
 print(dir(l))
 print(dir())#If object is not passed to the dir() method, it returns the list of names in the current local scope.
 
-
-
-
-
-#float(number or string): The float() method returns a floating point number from a number or a string.
-#Must contain decimal numbers.Leading and trailing whitespaces are removed.Optional use of "+", "-" signs.Could contain NaN, Infinity, inf (lowercase or uppercase).
-print("******************************************float() Example***********************************")
-
-# for integers
-print(float(10))
-
-# for floats
-print(float(11.22))
-
-# for string floats
-print(float("-13.33"))
-
-# for string floats with whitespaces
-print(float("     -24.45\n"))
-
-# string float error
-#print(float("abc")) ValueError: could not convert string to float: 'abc'
-
-
-#int(string or number, base): The int() method returns an integer object from any number or string.
-# int(x=0, base=10) by default and base  Can be 0 (code literal) or 2-36.
-#an integer object from the given number or string, treats default base as 10 and (No parameters) returns 0
-print("******************************************int() Example***********************************")
-# integer
-print("int(123) is:", int(123))
-
-# float
-print("int(123.23) is:", int(123.23))
-
-# string
-print("int('123') is:", int('123'))
-
-# binary 0b or 0B
-print("For 1010, int is:", int('1010', 2))
-print("For 0b1010, int is:", int('0b1010', 2))
-
-# octal 0o or 0O
-print("For 12, int is:", int('12', 8))
-print("For 0o12, int is:", int('0o12', 8))
-
-# hexadecimal
-print("For A, int is:", int('A', 16))
-print("For 0xA, int is:", int('0xA', 16))
 
 
 #The hash(object) method returns the hash value of an object if it has one.
