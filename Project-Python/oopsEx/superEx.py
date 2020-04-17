@@ -334,3 +334,42 @@ Bat can't swim.
 Bat is a warm-blooded animal.
 Bat is an animal.
 """
+
+
+class HttpResponseBase:
+    """ 
+    1. if we have same class variable in all the class (childs and parents), then system will take value from greatest child class.
+    2. In parent class method, you can not call super().method().
+    """
+    status_code = 200
+    def __init__(self, content_type=None, status=None, reason=None, charset=None):
+        print("Z")
+        print(self.status_code)
+        super().__init__()  # Can not add * args or **kwargs or any variable, because object class doesn't accept any variable.
+        
+    def set_streaming_data(self):
+        print("ab Z")
+        #super().set_streaming_data() 
+
+class HttpResponse(Z):
+    def __init__(self, content=b'', *args, **kwargs):
+        print("A")
+        super().__init__(*args, **kwargs)
+        print(self.status_code)
+
+    def set_streaming_data(self):
+        print("ab A")
+        super().set_streaming_data()
+        
+class JsonResponse(HttpResponse):
+    status_code = 300
+    def __init__(self, data, *args, type=None, **kwargs):
+        print("B")
+        super().__init__(*args, **kwargs)
+
+    def set_streaming_data(self):
+        print("ab B")
+        return super().set_streaming_data()
+        
+o = JsonResponse(data='b',content_type = 'z')
+o.ab()
