@@ -320,7 +320,7 @@ print(l1)#[3.4, 'kapil jain', 'dog', 'hi', 1]
 #l.reverse(1) TypeError: reverse() takes no arguments (1 given)
 
 
-#sort() no argument. it sort the list
+#sort(*, key=None, reverse=False). it sort the list If a key function is given, apply it once to each list item and sort them ascending or descending, according to their function values.
 # return : None
 l = [1,2,3,4,5,1]
 l.sort()
@@ -328,6 +328,12 @@ print(l)# [1, 1, 2, 3, 4, 5]
 
 l1 = [1,'hi', 'dog','kapil jain', 3.4]
 #l1.sort() TypeError: '<' not supported between instances of 'str' and 'int'
+
+# Sort exployee data bases on age
+l = [["Kapil",24],["Vishant",21],["Abhay",34]]
+def age(l):
+	return l[1]
+l.sort(key=age) # [['Vishant', 21], ['Kapil', 24], ['Abhay', 34]]
 
 
 #copy()  Return a shallow copy of the list.
