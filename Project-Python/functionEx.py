@@ -155,3 +155,17 @@ def operate(func, x):
 operate(inc,3) # 4
 operate(dec,3) # 2
 
+
+## Nested Function
+def func(x,y):
+    print(x,y)
+
+func1 = lambda x: lambda y: func(x,y)
+
+def func2(x):
+    def new_func(y):
+        return func(x,y)
+    return new_func
+    
+func1(2)(3)
+func2(2)(3)
