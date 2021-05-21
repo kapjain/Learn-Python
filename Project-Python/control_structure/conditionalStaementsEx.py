@@ -21,4 +21,9 @@ elif y > x and y > z :
     print("y is greater")
 else :
     print("z is greater")#z is greater
-    
+
+i = 10
+print(True) if i < 15 else print(False)
+
+
+if i < 15: print("i is less than 15")
