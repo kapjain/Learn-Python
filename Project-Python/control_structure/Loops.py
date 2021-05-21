@@ -58,6 +58,24 @@ for i in range(10):
 
 
 
+for index, value in enumerate(['The', 'Big', 'Bang', 'Theory']):
+    print(index, value)
+    
+
+questions = ['name', 'colour', 'shape']
+answers = ['apple', 'red', 'a circle']
+
+for question, answer in zip(questions, answers):
+    print(question, answer)
+    
+    
+d = { "geeks" : "for", "only" : "geeks" }
+for key,value in d.items():
+    print key,value
+
+lis = [ 1 , 3, 5, 6, 2, 1, 3 ]
+for i in set(lis) :
+    print (i,end=" ")
 
 
 
