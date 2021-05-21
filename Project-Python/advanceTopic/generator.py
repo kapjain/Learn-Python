@@ -56,6 +56,7 @@ r = reverse('hi')
 print(next(r))
 print(next(r))
 # print(next(r)) StopIteration
+print(r.next()) # AttributeError: 'generator' object has no attribute 'next'
 
 data = 'golf'
 list(data[i] for i in range(len(data)-1, -1, -1)) #['f', 'l', 'o', 'g']
