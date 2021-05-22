@@ -1,4 +1,8 @@
 """
+First class objects in a language are handled uniformly throughout. They may be stored in data structures, passed as arguments, or used in control structures. 
+A programming language is said to support first-class functions if it treats functions as first-class objects. Python supports the concept of First Class functions.
+
+
 ## Function defination:
 def function_name (argument1, argument2..):
     statments
@@ -130,7 +134,7 @@ x = a_void_function()
 print(x) # None By default function return None
 
 
-#Various different names can be bound to the same function object.
+# 1. Functions are objects: Various different names can be bound to the same function object.
 def first(msg):
     print(msg)    
 
@@ -140,6 +144,7 @@ second = first
 second("Hello")
 
 
+# 2. Functions can be passed as arguments to other functions:
 #Functions can be passed as arguments to another function. If you have used functions like map, filter and reduce in Python, then you already know about this.
 #Such function that take other functions as arguments are also called higher order functions. Here is an example of such a function.
 
@@ -154,6 +159,19 @@ def operate(func, x):
     return result
 operate(inc,3) # 4
 operate(dec,3) # 2
+
+
+# 3. Functions can return another function:
+def create_adder(x):
+    def adder(y):
+        return x+y
+    return adder
+  
+add_15 = create_adder(15)
+print (add_15(10))
+
+print (create_adder(20)(10))
+
 
 
 ## Nested Function
