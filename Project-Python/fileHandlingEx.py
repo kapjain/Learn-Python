@@ -1,3 +1,12 @@
+"""
+Open file: open()
+Close file: close()
+Read file: read(), readline(), readlines()
+Write file: write(), writelines()
+tell()
+seek()
+"""
+
 with open("D:\My Data\Study material\django.txt","r") as fh : print(sum(1 for line in fh for character in line if character.isupper()))
 
 a=str(input("Enter the name of the file with .txt extension:"))
