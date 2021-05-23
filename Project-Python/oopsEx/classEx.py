@@ -1,14 +1,16 @@
 """
-Class Variables:  Class variables :are defined within the class construction. Because they are owned by the class itself, class variables are shared by all instances of the class.
+Class/Static Variables:  Class variables are defined within the class construction. Because they are owned by the class itself, class variables are shared by all instances of the class.
 They therefore will generally have the same value for every instance unless you are using the class variable to initialize a variable.
 
 
-Instance Variables:  Instance variables are owned by instances of the class. This means that for each object or instance of a class, the instance variables are different.
+Instance/Non-static Variables:  Instance variables are owned by instances of the class. This means that for each object or instance of a class, the instance variables are different.
 Unlike class variables, instance variables are defined within methods. 
 
+All variables which are assigned a value in the class declaration are class variables. And variables that are assigned values inside methods are instance variables.
 At the class level, variables are referred to as class variables, whereas variables at the instance level are called instance variables.
 
-Note:  This differentiation allows us to use class variables to initialize objects with a specific value assigned to variables, and use different variables for each object with instance variables.
+Note:  This differentiation allows us to use class variables to initialize objects with a specific value assigned to variables, and use different variables for each object 
+with instance variables.
 Making use of class- and instance-specific variables can ensure that our code adheres to the DRY principle to reduce repetition within code.
 """
 
