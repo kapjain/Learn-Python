@@ -1,6 +1,7 @@
 # Please refer before moving into new chapter https://github.com/kapjain/Learn-Python/blob/master/Project-Python/oopsEx/superEx.py
 """
-Inheritance: Inheritance enable us to define a class that takes all the functionality from parent class and allows us to add more
+Inheritance: Inheritance is the procedure in which one class inherits the attributes and methods of another class.  The class whose properties and methods are 
+    inherited is known as Parent class. And the class that inherits the properties from the parent class is the Child class.
 
 1. Single Inheritance
 2. Heirarchical Inheritance
