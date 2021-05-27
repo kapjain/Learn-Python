@@ -1,4 +1,8 @@
 """
+Class: A class is a collection of objects. It is a logical entity that has some specific attributes and methods. We define a class with a keyword “class” following the 
+    class_name and colon.
+
+
 Class/Static Variables:  Class variables are defined within the class construction. Because they are owned by the class itself, class variables are shared by all instances of the class.
 They therefore will generally have the same value for every instance unless you are using the class variable to initialize a variable.
 
