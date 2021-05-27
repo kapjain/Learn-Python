@@ -1,4 +1,8 @@
 """
+Polimorphism - a. method overloading b. method overriding
+    Polymorphism contains two words "poly" and "morphs". Poly means many, and morph means shape. By polymorphism, we understand that one task can be performed in different ways.
+
+
 Method overloading: When a class contain multiple methods with same name is called method overloading.
 
 Note: Python does not support method overloading. If you will create multiple method with same name, python will overide the method,
@@ -59,3 +63,18 @@ print(emp1.fullname)
 print(emp2.email)
 emp2.fullname = 'Rahul jain'
 print(emp2.email)
+
+
+"""
+Method overriddinging: When a method present in parent class is also available in child class is called as method overriding.
+"""
+class Parent:
+    def method(self):
+        print("Original Method")
+
+class Child(Parent):
+    def method(self):
+        print("Overrided Method")
+        
+obj = Child()
+obj.method() # Overrided Method
